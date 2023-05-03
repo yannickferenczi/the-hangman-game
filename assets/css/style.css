@@ -6,3 +6,17 @@
     list-style-type: none;
     text-decoration: none;
 }
+
+/* Styling the header */
+.main-header {
+    display: grid;
+    grid-template-columns: repeat(10, 10%);
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 16px;
+    grid-column: 2 / 3;
+    padding: 15px 0;
+}
