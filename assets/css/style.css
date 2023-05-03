@@ -71,6 +71,12 @@ button {
     color: white;
 }
 
+button[data-status=active] {
+    background-color: white;
+    border: 2px solid black;
+    color: black;
+}
+
 .close-menu {
     margin: 30px;
     padding: 10px 15px;
