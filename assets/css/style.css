@@ -34,7 +34,7 @@ nav {
     text-align: center;
 }
 
-#level-button {
+button {
     color: white;
     background-color: black;
     padding: 5px 15px;
