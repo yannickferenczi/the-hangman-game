@@ -20,3 +20,51 @@ h1 {
     grid-column: 2 / 3;
     padding: 15px 0;
 }
+
+/* Styling navigation menu */
+nav {
+    grid-column: 1 / 11;
+    grid-row-start: 1;
+    display: grid;
+    grid-template-columns: repeat(10, 10%);
+}
+
+.level-menu {
+    grid-column: 6 / 11;
+    text-align: center;
+}
+
+#level-button {
+    color: white;
+    background-color: black;
+    padding: 5px 15px;
+    border-radius: 5px;
+    border: 2px solid white;
+    box-shadow: 2px 2px 5px black;
+}
+
+.hidden-menu {
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid white;
+    box-shadow: 2px 2px 5px black;
+    box-sizing: border-box;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 90%;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.hidden-menu>p {
+    color: white;
+    font-size: 18px;
+    margin: 15px 0 30px;
+}
+
+.option-item {
+    margin: 10px;
+    color: white;
+}
