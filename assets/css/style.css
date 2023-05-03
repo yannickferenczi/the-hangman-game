@@ -113,6 +113,7 @@ details li {
     padding: 5px;
 }
 
+/* Styling the game area */
 .riddle-area {
     grid-column: 1 / 11;
     text-align: center;
@@ -163,4 +164,72 @@ details li {
 
 #no-more-steps {
     display: none;
+}
+
+/* Styling the typing area */
+.typing-area {
+    grid-column: 2 / 10;
+    display: grid;
+    margin-bottom: 50px;
+    width: 100%;
+    grid-template-columns: repeat(9, 10%);
+    grid-template-rows: repeat(3, 30px);
+    grid-gap: 5px 1%;
+    text-align: center;
+}
+
+.typing-buttons {
+    border: none;
+    box-shadow: 2px 2px 5px black;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+}
+
+.column-one {
+    grid-template-columns: 1 / 2;
+}
+
+.column-two {
+    grid-template-columns: 2 / 3;
+}
+
+.column-three {
+    grid-template-columns: 3 / 4;
+}
+
+.column-four {
+    grid-template-columns: 4 / 5;
+}
+
+.column-five {
+    grid-template-columns: 5 / 6;
+}
+
+.column-six {
+    grid-template-columns: 6 / 7;
+}
+
+.column-seven {
+    grid-template-columns: 7 / 8;
+}
+
+.column-height {
+    grid-template-columns: 8 / 9;
+}
+
+.column-nine {
+    grid-template-columns: 9 / 10;
+}
+
+.line-one {
+    grid-template-rows: 1 / 2;
+}
+
+.line-two {
+    grid-template-rows: 2 / 3;
+}
+
+.line-three {
+    grid-template-rows: 3 / 4;
 }
