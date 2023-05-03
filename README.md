@@ -6,3 +6,8 @@ This is a web application of the famous 'Hangman Game'. It allows the user to pl
 
 [Visit the live project here]()
 
+
+
+## Bugs
+
+When clicking on the level-menu button, the first heading does not stay where it belong.
