@@ -44,6 +44,7 @@ button {
 }
 
 .hidden-menu {
+    display: none;
     padding: 5px;
     border-radius: 5px;
     border: 2px solid white;
