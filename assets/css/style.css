@@ -91,3 +91,23 @@ button[data-status=active] {
     padding: 10px 15px;
     border-radius: 50px;
 }
+
+/* Styling main content */
+.main-content {
+    display: grid;
+    grid-template-columns: repeat(10, 10%);
+    grid-column: 1 / 11;
+    align-items: center;
+}
+
+details {
+    grid-column: 2 / 10;
+    text-align: center;
+    background-color: black;
+}
+
+summary,
+details li {
+    color: white;
+    padding: 5px;
+}
