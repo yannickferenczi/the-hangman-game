@@ -8,11 +8,11 @@ document.addEventListener("DOMContentLoaded", function () {
             if (this.getAttribute("data-type") === "level-menu") {
                 // Display the level options
                 document.getElementsByClassName("level-menu")[0].style.display = "none";
-                document.getElementsByClassName("hidden-menu")[0].style.display = "block";
+                document.getElementsByClassName("dark-background")[0].style.display = "block";
             } else if (this.getAttribute("data-type") === "close-menu") {
                 // Hide the level options
                 document.getElementsByClassName("level-menu")[0].style.display = "block";
-                document.getElementsByClassName("hidden-menu")[0].style.display = "none";
+                document.getElementsByClassName("dark-background")[0].style.display = "none";
             } else if (this.getAttribute("data-type") === "level") {
                 // Select the level of the game
                 level = this.innerHTML;
