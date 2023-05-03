@@ -69,3 +69,9 @@ button {
     margin: 10px;
     color: white;
 }
+
+.close-menu {
+    margin: 30px;
+    padding: 10px 15px;
+    border-radius: 50px;
+}
