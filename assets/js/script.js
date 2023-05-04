@@ -115,16 +115,14 @@ class Riddle {
     }
 
     fetchDataFromJson() {
-        let listOfWords;
         fetch(`assets/json/data-${this.level}.json`)
             .then(function (response) {
                 return response.json();
             })
             .then(function (data) {
-                listOfWords = data;
                 console.log(data);
+                return data;
             });
-        return listOfWords;
     }
 
     /**
