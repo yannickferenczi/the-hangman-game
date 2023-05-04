@@ -114,13 +114,7 @@ class Riddle {
         this.stuffToGuess = this.getStuffToGuess();
     }
 
-    /**
-     * This method is called once when an instance is created
-     * and defines randomly what to guess
-     * @returns the word or expression to guess as a string
-     */
-    getStuffToGuess() {
-        // Fetch the listOfWords from the level pick by the user
+    fetchDataFromJson() {
         let listOfWords;
         fetch(`assets/json/data-${this.level}.json`)
             .then(function (response) {
@@ -129,6 +123,17 @@ class Riddle {
             .then(function (data) {
                 listOfWords = data;
             });
+        return listOfWords;
+    }
+
+    /**
+     * This method is called once when an instance is created
+     * and defines randomly what to guess
+     * @returns the word or expression to guess as a string
+     */
+    getStuffToGuess() {
+        // Fetch the listOfWords from the level pick by the user
+        let listOfWords = fetchDataFromJson();
 
         // let listOfWords = [
         //     "Aboil",
