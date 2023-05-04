@@ -62,6 +62,19 @@ document.addEventListener("DOMContentLoaded", function () {
                         document.getElementById('remaining-lifes').innerHTML = remainingLifes;
                         document.getElementById("still-a-chance").style.display = "none";
                         document.getElementById("no-more-steps").style.display = "block";
+                        if (remainingLifes > 0) {
+                            document.getElementById("end-game-heading").textContent = "You lost!";
+                            document.getElementById("end-game-info").innerHTML =
+                                `<p>The answer was "${theRiddle.stuffToGuess}"</p>
+                                <p>Total Score: ${document.getElementById("total-score").innerHTML} - Remainig Life${remainingLifes !== 1 ? "s" : ""}: ${remainingLifes}</p>`;
+                            document.getElementById("new-game").textContent = "Try again";
+                        } else {
+                            document.getElementById("end-game-heading").textContent = "Game over!";
+                            document.getElementById("end-game-info").innerHTML =
+                                `<p>The answer was "${theRiddle.stuffToGuess}"</p>
+                                <p>${displayScoreByGameOver()}</p>`;
+                            document.getElementById("new-game").textContent = "New game";
+                        }
                     }
                 }
             }
