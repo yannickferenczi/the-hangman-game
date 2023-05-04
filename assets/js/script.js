@@ -201,3 +201,9 @@ function insertAnswerIntoRiddle(riddleSolution, indexToDisplay) {
     }
     riddle.textContent = listOfLetters.join("");
 }
+
+
+function increaseScore(riddlePoints) {
+    currentScore = document.getElementById("total-score").textContent;
+    document.getElementById("total-score").textContent = parseInt(currentScore) + riddlePoints;
+}
