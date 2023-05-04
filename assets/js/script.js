@@ -1,6 +1,7 @@
 // Start script when DOM Content is loaded
 document.addEventListener("DOMContentLoaded", function () {
     let level = "level1";
+    let step = 1;
     let theRiddle = new Riddle(level);
     displayRiddle(theRiddle.transformStuffToGuessIntoRiddle());
     // Define event listeners for the buttons
@@ -38,12 +39,26 @@ document.addEventListener("DOMContentLoaded", function () {
                     let riddleCompleted = !(document.getElementById("riddle").textContent.includes("_"));
                     if (riddleCompleted) {
                         increaseScore(theRiddle.calculateRiddlePoints());
+                        // Display the congratulations message
                         document.getElementById("end-game-container").style.display = "block";
                         document.getElementById("end-game-heading").textContent = "Congratulations!";
                         document.getElementById("end-game-info").innerHTML =
                             `<p>You got it and increased your score by  ${theRiddle.calculateRiddlePoints()} points!</p>
                             <p>You now have a total of ${document.getElementById("total-score").innerHTML} points.</p>`;
                         document.getElementById("new-game").textContent = "Continue";
+                    }
+                } else {
+                    step += 1;
+                    document.getElementById("hangman").src = `assets/images/hangman-step${step}.png`;
+                    if (step === 6) {
+                        document.getElementById("steps-left").textContent = `${7 - step} step`;
+                    } else if (step > 1 && step < 6) {
+                        document.getElementById("steps-left").textContent = `${7 - step} steps`;
+                    } else {
+                        document.getElementById("end-game-container").style.display = "block";
+                        document.getElementById('remaining-lifes').innerHTML -= 1;
+                        document.getElementById("still-a-chance").style.display = "none";
+                        document.getElementById("no-more-steps").style.display = "block";
                     }
                 }
             }
