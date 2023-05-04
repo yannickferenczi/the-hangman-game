@@ -35,6 +35,16 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (checkedUserAnswer.length > 0) {
                     // If the tried letter is in the riddle
                     insertAnswerIntoRiddle(theRiddle.stuffToGuess, checkedUserAnswer);
+                    let riddleCompleted = !(document.getElementById("riddle").textContent.includes("_"));
+                    if (riddleCompleted) {
+                        increaseScore(theRiddle.calculateRiddlePoints());
+                        document.getElementById("end-game-container").style.display = "block";
+                        document.getElementById("end-game-heading").textContent = "Congratulations!";
+                        document.getElementById("end-game-info").innerHTML =
+                            `<p>You got it and increased your score by  ${theRiddle.calculateRiddlePoints()} points!</p>
+                            <p>You now have a total of ${document.getElementById("total-score").innerHTML} points.</p>`;
+                        document.getElementById("new-game").textContent = "Continue";
+                    }
                 }
             }
         });
