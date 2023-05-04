@@ -2,6 +2,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     let level = "level1";
     let theRiddle = new Riddle(level);
+    displayRiddle(theRiddle.transformStuffToGuessIntoRiddle());
     // Define event listeners for the buttons
     let buttons = document.getElementsByTagName("button");
     for (let button of buttons) {
@@ -147,4 +148,12 @@ class Riddle {
         }
         return this.points;
     }
+}
+
+/**
+ * Display the riddle in the DOM
+ * @param {string} stuffToGuess 
+ */
+function displayRiddle(riddle) {
+    document.getElementById("riddle").textContent = riddle;
 }
