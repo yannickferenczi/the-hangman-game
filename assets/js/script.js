@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 // Select the level of the game
                 level = this.innerHTML;
                 theRiddle = new Riddle(level);
+                displayRiddle(theRiddle.transformStuffToGuessIntoRiddle());
                 let listOfLevelButtons = document.getElementsByClassName("level-option");
                 for (let button of listOfLevelButtons) {
                     button.dataset.status = "inactive";
