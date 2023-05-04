@@ -121,7 +121,8 @@ class Riddle {
      */
     getStuffToGuess() {
         // Fetch the listOfWords from the level pick by the user
-        let listOfWords = fetch(`../json/data-${this.level}.json`);
+        let listOfWords
+        fetch(`../json/data-${this.level}.json`).then((response) => response.json()).then((json) => console.log(json));
         console.log(listOfWords);
 
         // let listOfWords = [
