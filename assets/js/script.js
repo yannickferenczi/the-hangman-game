@@ -122,6 +122,7 @@ class Riddle {
             })
             .then(function (data) {
                 listOfWords = data;
+                console.log(data);
             });
         return listOfWords;
     }
