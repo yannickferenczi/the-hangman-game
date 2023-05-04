@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 this.style.cursor = "default";
                 this.style.backgroundColor = "#999";
                 this.style.color = '#555';
+                let checkedUserAnswer = checkRiddleWithUserGuess(userGuess, theRiddle.stuffToGuess);
             }
         });
     }
@@ -163,4 +164,17 @@ class Riddle {
  */
 function displayRiddle(riddle) {
     document.getElementById("riddle").textContent = riddle;
+}
+
+function checkRiddleWithUserGuess(userGuess, stuffToGuess) {
+    let indexToReveal = [];
+    let startIndex = 0;
+    let searchScope = stuffToGuess.toUpperCase().slice(startIndex);
+    while (searchScope.includes(userGuess)) {
+        let newIndex = searchScope.indexOf(userGuess);
+        indexToReveal.push(startIndex + newIndex);
+        startIndex = newIndex + 1;
+        searchScope = searchScope.slice(startIndex);
+    }
+    return indexToReveal;
 }
