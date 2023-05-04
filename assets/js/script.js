@@ -1,6 +1,7 @@
 // Start script when DOM Content is loaded
 document.addEventListener("DOMContentLoaded", function () {
     let level = "level1";
+    let theRiddle = new Riddle(level);
     // Define event listeners for the buttons
     let buttons = document.getElementsByTagName("button");
     for (let button of buttons) {
