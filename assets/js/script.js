@@ -33,6 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 this.style.color = '#555';
                 let checkedUserAnswer = checkRiddleWithUserGuess(userGuess, theRiddle.stuffToGuess);
                 if (checkedUserAnswer.length > 0) {
+                    // If the tried letter is in the riddle
                     insertAnswerIntoRiddle(theRiddle.stuffToGuess, checkedUserAnswer);
                 }
             }
