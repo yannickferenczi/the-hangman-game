@@ -238,3 +238,17 @@ function increaseScore(riddlePoints) {
     currentScore = document.getElementById("total-score").textContent;
     document.getElementById("total-score").textContent = parseInt(currentScore) + riddlePoints;
 }
+
+/**
+ * Return a different message to display when the game is over
+ * depending on the amount of total points cumulated 
+ */
+function displayScoreByGameOver() {
+    if (parseInt(document.getElementById("total-score").textContent) === 0) {
+        return "Your score remained null.";
+    } else if (parseInt(document.getElementById("total-score").textContent) < 50) {
+        return `Your total score is ${document.getElementById('total-score').innerHTML} points.`;
+    } else {
+        return `Wow! You managed a great score of ${document.getElementById('total-score').innerHTML} points.`;
+    }
+}
