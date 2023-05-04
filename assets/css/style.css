@@ -113,6 +113,44 @@ details li {
     padding: 5px;
 }
 
+/* Styling the window of ending game message */
+#end-game-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 2;
+}
+
+#end-game-content {
+    margin: 30vh auto;
+    width: 90%;
+    background-color: black;
+    padding-bottom: 30px;
+    text-align: center;
+    border: 2px solid white;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+#end-game-heading,
+#end-game-info,
+#end-game-info>* {
+    color: white;
+}
+
+#end-game-heading {
+    padding: 15px;
+    text-decoration: underline;
+}
+
+#end-game-info>p {
+    padding: 15px;
+}
+
 /* Styling the game area */
 .riddle-area {
     grid-column: 1 / 11;
