@@ -178,3 +178,12 @@ function checkRiddleWithUserGuess(userGuess, stuffToGuess) {
     }
     return indexToReveal;
 }
+
+function insertAnswerIntoRiddle(riddleSolution, indexToDisplay) {
+    let riddle = document.getElementById("riddle");
+    let listOfLetters = Array.from(riddle.innerHTML);
+    for (let index of indexToDisplay) {
+        listOfLetters[index] = riddleSolution[index];
+    }
+    riddle.textContent = listOfLetters.join("");
+}
