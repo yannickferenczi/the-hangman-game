@@ -48,6 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         document.getElementById("new-game").textContent = "Continue";
                     }
                 } else {
+                    // If the tried letter is not in the riddle
                     step += 1;
                     document.getElementById("hangman").src = `assets/images/hangman-step${step}.png`;
                     if (step === 6) {
@@ -55,8 +56,10 @@ document.addEventListener("DOMContentLoaded", function () {
                     } else if (step > 1 && step < 6) {
                         document.getElementById("steps-left").textContent = `${7 - step} steps`;
                     } else {
+                        let remainingLifes = parseInt(document.getElementById("remaining-lifes").innerHTML);
+                        remainingLifes -= 1;
                         document.getElementById("end-game-container").style.display = "block";
-                        document.getElementById('remaining-lifes').innerHTML -= 1;
+                        document.getElementById('remaining-lifes').innerHTML = remainingLifes;
                         document.getElementById("still-a-chance").style.display = "none";
                         document.getElementById("no-more-steps").style.display = "block";
                     }
