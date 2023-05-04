@@ -133,7 +133,7 @@ class Riddle {
      */
     getStuffToGuess() {
         // Fetch the listOfWords from the level pick by the user
-        let listOfWords = fetchDataFromJson();
+        let listOfWords = this.fetchDataFromJson();
 
         // let listOfWords = [
         //     "Aboil",
