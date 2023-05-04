@@ -77,6 +77,22 @@ document.addEventListener("DOMContentLoaded", function () {
                         }
                     }
                 }
+            } else if (this.getAttribute("data-type") === "new-game") {
+                theRiddle = new Riddle(level);
+                displayRiddle(theRiddle.transformStuffToGuessIntoRiddle());
+                document.getElementById("end-game-container").style.display = "none";
+                step = 1;
+                document.getElementById("hangman").src = `assets/images/hangman-step${step}.png`;
+                document.getElementById("still-a-chance").style.display = "block";
+                document.getElementById("no-more-steps").style.display = "none";
+                document.getElementById("steps-left").textContent = `${7 - step} steps`;
+                let typingButtons = document.getElementsByClassName("typing-buttons");
+                for (let button of typingButtons) {
+                    button.disabled = false;
+                    button.style.cursor = "pointer";
+                    button.style.color = "white";
+                    button.style.backgroundColor = "black";
+                }
             }
         });
     }
