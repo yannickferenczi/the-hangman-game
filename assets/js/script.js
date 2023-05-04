@@ -121,13 +121,14 @@ class Riddle {
      */
     getStuffToGuess() {
         // Fetch the listOfWords from the level pick by the user
-        let listOfWords = fetch(`../json/data-${this.level}.json`)
-        .then(function(response) {
-            return response.json();
-        })
-        .then(function(data) {
-            return data;
-        });
+        let listOfWords = [];
+        fetch(`../json/data-${this.level}.json`)
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                listOfWords = data;
+            });
 
         // let listOfWords = [
         //     "Aboil",
