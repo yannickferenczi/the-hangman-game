@@ -32,6 +32,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 this.style.backgroundColor = "#999";
                 this.style.color = '#555';
                 let checkedUserAnswer = checkRiddleWithUserGuess(userGuess, theRiddle.stuffToGuess);
+                if (checkedUserAnswer.length > 0) {
+                    insertAnswerIntoRiddle(theRiddle.stuffToGuess, checkedUserAnswer);
+                }
             }
         });
     }
