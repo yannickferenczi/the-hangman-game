@@ -93,6 +93,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     button.style.color = "white";
                     button.style.backgroundColor = "black";
                 }
+                if (this.textContent === "New game") {
+                    resetScoreAndLifes();
+                }
             }
         });
     }
@@ -267,4 +270,9 @@ function displayScoreByGameOver() {
     } else {
         return `Wow! You managed a great score of ${document.getElementById('total-score').innerHTML} points.`;
     }
+}
+
+function resetScoreAndLifes() {
+    document.getElementById("total-score").textContent = 0;
+    document.getElementById("remaining-lifes").textContent = 3;
 }
