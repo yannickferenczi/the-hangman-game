@@ -1,5 +1,6 @@
 // Start script when DOM Content is loaded
 document.addEventListener("DOMContentLoaded", function () {
+    resetScoreAndLifes();
     let level = "level1";
     let step = 1;
     let theRiddle = new Riddle(level);
