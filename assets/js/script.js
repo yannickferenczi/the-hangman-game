@@ -24,6 +24,13 @@ document.addEventListener("DOMContentLoaded", function () {
                     button.dataset.status = "inactive";
                 }
                 this.dataset.status = "active";
+            } else if (this.getAttribute("data-type") === "letter") {
+                // Try a letter to solve the riddle
+                let userGuess = this.innerHTML;
+                this.disabled = true;
+                this.style.cursor = "default";
+                this.style.backgroundColor = "#999";
+                this.style.color = '#555';
             }
         });
     }
