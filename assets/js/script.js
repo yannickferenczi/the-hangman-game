@@ -47,18 +47,26 @@ document.addEventListener("DOMContentLoaded", function () {
                     insertAnswerIntoRiddle(theRiddle.stuffToGuess, checkedUserAnswer);
                     let riddleCompleted = !(document.getElementById("riddle").textContent.includes("_"));
                     if (riddleCompleted) {
-                        increaseScore(theRiddle.calculateRiddlePoints());
                         streak += 1;
+                        let remainingLifes = parseInt(document.getElementById("remaining-lifes").innerHTML);
                         if ((streak % 5) === 0) {
-                            let remainingLifes = parseInt(document.getElementById("remaining-lifes").innerHTML);
                             remainingLifes += 1;
-                            document.getElementById("remaining-lifes").innerHTML = remainingLifes;
                         }
+                        if (step === 1) {
+                            increaseScore(theRiddle.points, theRiddle.bonus);
+                            remainingLifes += 1;
+                        } else {
+                            increaseScore(theRiddle.points);
+                        }
+                        document.getElementById("remaining-lifes").innerHTML = remainingLifes;
                         // Display the congratulations message
                         document.getElementById("end-game-container").style.display = "block";
                         document.getElementById("end-game-heading").textContent = "Congratulations!";
+                        let bonusMessage = `plus a bonus of ${theRiddle.bonus} point${theRiddle.bonus !== 1 ? "s" : ""}`;
+                        let extraLifeMessage = "<p>You also got an extra life for your performance!</p>"
                         document.getElementById("end-game-info").innerHTML =
-                            `<p>You got it and increased your score by  ${theRiddle.calculateRiddlePoints()} points!</p>
+                            `<p>You got it and increased your score by  ${theRiddle.points} points ${step === 1 ? bonusMessage : ""}!</p>
+                            ${step === 1 ? extraLifeMessage : ""}
                             <p>You now have a total of ${document.getElementById("total-score").innerHTML} points.</p>`;
                         document.getElementById("new-game").textContent = "Continue";
                     }
@@ -135,6 +143,9 @@ class Riddle {
     constructor(level) {
         this.level = level;
         this.stuffToGuess = this.getStuffToGuess();
+        this.riddle = this.transformStuffToGuessIntoRiddle();
+        this.points = this.calculateRiddlePoints();
+        this.bonus = this.calculateRiddleBonus();
     }
 
     /**
@@ -11284,15 +11295,15 @@ class Riddle {
      * (such as space, comma, etc) visible
      */
     transformStuffToGuessIntoRiddle() {
-        this.riddle = "";
+        let riddle = "";
         for (let character of this.stuffToGuess) {
             if ("abcdefghijklmnopqrstuvwxyz".includes(character.toLowerCase())) {
-                this.riddle += "_";
+                riddle += "_";
             } else {
-                this.riddle += character;
+                riddle += character;
             }
         }
-        return this.riddle;
+        return riddle;
     }
 
     /**
@@ -11301,13 +11312,17 @@ class Riddle {
      * @returns a number
      */
     calculateRiddlePoints() {
-        this.points = 0;
+        let points = 0;
         for (let character of this.riddle) {
             if (character === "_") {
-                this.points += 1;
+                points += 1;
             }
         }
-        return this.points;
+        return points;
+    }
+
+    calculateRiddleBonus() {
+        return Math.floor(this.points * 0.2);
     }
 }
 
@@ -11344,9 +11359,9 @@ function insertAnswerIntoRiddle(riddleSolution, indexToDisplay) {
 }
 
 
-function increaseScore(riddlePoints) {
-    let currentScore = document.getElementById("total-score").textContent;
-    document.getElementById("total-score").textContent = parseInt(currentScore) + riddlePoints;
+function increaseScore(riddlePoints, bonus=0) {
+    let currentScore = parseInt(document.getElementById("total-score").innerHTML);
+    document.getElementById("total-score").innerHTML = (currentScore + riddlePoints + bonus);
 }
 
 /**
