@@ -98,6 +98,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (this.textContent === "New game") {
                     resetScoreAndLifes();
                 }
+            } else if (this.getAttribute("data-type") === "quit-game") {
+                // Quit the game
+                document.getElementById("end-game-container").style.display = "block";
+                document.getElementById("end-game-heading").textContent = "Good Bye!";
+                document.getElementById("end-game-info").innerHTML = `<p>Thank you for playing with us!</p>`;
+                document.getElementById("new-game").style.display = "none";
+                document.getElementById("quit-game").style.display = "none";
             }
         });
     }
