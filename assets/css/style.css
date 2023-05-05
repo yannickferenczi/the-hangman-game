@@ -162,6 +162,8 @@ details li {
     display: inline-block;
     font-size: 20px;
     letter-spacing: 0.5rem;
+    word-spacing: 0.8rem;
+    line-height: 30px;
 }
 
 .score-area {
