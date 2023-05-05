@@ -64,6 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     } else {
                         let remainingLifes = parseInt(document.getElementById("remaining-lifes").innerHTML);
                         remainingLifes -= 1;
+                        // Display the 'You lost' or 'Game Over' message
                         document.getElementById("end-game-container").style.display = "block";
                         document.getElementById('remaining-lifes').innerHTML = remainingLifes;
                         document.getElementById("still-a-chance").style.display = "none";
@@ -84,6 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
                 }
             } else if (this.getAttribute("data-type") === "new-game") {
+                // Start a new riddle
                 theRiddle = new Riddle(level);
                 displayRiddle(theRiddle.transformStuffToGuessIntoRiddle());
                 document.getElementById("end-game-container").style.display = "none";
