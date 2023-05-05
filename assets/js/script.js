@@ -28,6 +28,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
                 this.dataset.status = "active";
                 resetTypingArea();
+                step = 1;
+                document.getElementById("hangman").src = `assets/images/hangman-step${step}.png`;
+                document.getElementById("steps-left").textContent = `${7 - step} steps`;
             } else if (this.getAttribute("data-type") === "letter") {
                 // Try a letter to solve the riddle
                 let userGuess = this.innerHTML;
