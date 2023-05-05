@@ -11297,10 +11297,12 @@ function displayRiddle(riddle) {
 function checkRiddleWithUserGuess(userGuess, stuffToGuess) {
     let indexToReveal = [];
     let startIndex = 0;
+    let referenceIndex = -1;
     let searchScope = stuffToGuess.toUpperCase().slice(startIndex);
     while (searchScope.includes(userGuess)) {
         let newIndex = searchScope.indexOf(userGuess);
-        indexToReveal.push(startIndex + newIndex);
+        referenceIndex += (newIndex + 1);
+        indexToReveal.push(referenceIndex);
         startIndex = newIndex + 1;
         searchScope = searchScope.slice(startIndex);
     }
@@ -11318,7 +11320,7 @@ function insertAnswerIntoRiddle(riddleSolution, indexToDisplay) {
 
 
 function increaseScore(riddlePoints) {
-    currentScore = document.getElementById("total-score").textContent;
+    let currentScore = document.getElementById("total-score").textContent;
     document.getElementById("total-score").textContent = parseInt(currentScore) + riddlePoints;
 }
 
