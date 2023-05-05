@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     button.dataset.status = "inactive";
                 }
                 this.dataset.status = "active";
+                resetTypingArea();
             } else if (this.getAttribute("data-type") === "letter") {
                 // Try a letter to solve the riddle
                 let userGuess = this.innerHTML;
@@ -88,13 +89,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById("still-a-chance").style.display = "block";
                 document.getElementById("no-more-steps").style.display = "none";
                 document.getElementById("steps-left").textContent = `${7 - step} steps`;
-                let typingButtons = document.getElementsByClassName("typing-buttons");
-                for (let button of typingButtons) {
-                    button.disabled = false;
-                    button.style.cursor = "pointer";
-                    button.style.color = "white";
-                    button.style.backgroundColor = "black";
-                }
+                resetTypingArea();
                 if (this.textContent === "New game") {
                     resetScoreAndLifes();
                 }
@@ -11248,7 +11243,7 @@ class Riddle {
                 "Biting more than you can chew",
                 "Best thing since sliced bread"
             ]
-        }
+        };
 
         // Create a random Int between 0 and the length of listOfWords
         let randomNumber = Math.floor(Math.random() * (data[this.level].length - 1));
@@ -11341,4 +11336,14 @@ function displayScoreByGameOver() {
 function resetScoreAndLifes() {
     document.getElementById("total-score").textContent = 0;
     document.getElementById("remaining-lifes").textContent = 3;
+}
+
+function resetTypingArea() {
+    let typingButtons = document.getElementsByClassName("typing-buttons");
+    for (let button of typingButtons) {
+        button.disabled = false;
+        button.style.cursor = "pointer";
+        button.style.color = "white";
+        button.style.backgroundColor = "black";
+    }
 }
