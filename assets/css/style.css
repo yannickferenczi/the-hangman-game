@@ -293,3 +293,37 @@ details li {
         grid-column: 5 / 10;
     }
 }
+
+/* Media query for tablet or big screens portrait */
+@media only screen and (min-width: 500px) and (orientation: portrait) {
+    .riddle-area {
+        grid-column: 1 / 11;
+        text-align: center;
+        padding: 50px 15px 50px;
+    }
+
+    .score-area {
+        grid-column: 2 / 4;
+        grid-row-start: 3;
+        grid-template-columns: 100%;
+        grid-template-rows: 1fr 1fr;
+        align-items: center;
+        height: 50%;
+    }
+
+    #total-score {
+        display: block;
+    }
+
+    #remaining-lifes {
+        display: block;
+    }
+
+    .hangman-area {
+        grid-column: 4 / 11;
+    }
+
+    .typing-area {
+        grid-column: 2 / 10;
+    }
+}
