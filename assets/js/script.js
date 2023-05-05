@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     resetScoreAndLifes();
     let level = "level1";
     let step = 1;
+    let streak = 0;
     let theRiddle = new Riddle(level);
     displayRiddle(theRiddle.transformStuffToGuessIntoRiddle());
     // Define event listeners for the buttons
@@ -21,6 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 // Select the level of the game
                 level = this.innerHTML.replace(" ", "").toLowerCase();
                 theRiddle = new Riddle(level);
+                console.log(theRiddle.stuffToGuess);
                 displayRiddle(theRiddle.transformStuffToGuessIntoRiddle());
                 let listOfLevelButtons = document.getElementsByClassName("level-option");
                 for (let button of listOfLevelButtons) {
@@ -45,6 +47,12 @@ document.addEventListener("DOMContentLoaded", function () {
                     let riddleCompleted = !(document.getElementById("riddle").textContent.includes("_"));
                     if (riddleCompleted) {
                         increaseScore(theRiddle.calculateRiddlePoints());
+                        streak += 1;
+                        if ((streak % 5) === 0) {
+                            let remainingLifes = parseInt(document.getElementById("remaining-lifes").innerHTML);
+                            remainingLifes += 1;
+                            document.getElementById("remaining-lifes").innerHTML = remainingLifes;
+                        }
                         // Display the congratulations message
                         document.getElementById("end-game-container").style.display = "block";
                         document.getElementById("end-game-heading").textContent = "Congratulations!";
@@ -64,6 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     } else {
                         let remainingLifes = parseInt(document.getElementById("remaining-lifes").innerHTML);
                         remainingLifes -= 1;
+                        streak = 0;
                         // Display the 'You lost' or 'Game Over' message
                         document.getElementById("end-game-container").style.display = "block";
                         document.getElementById('remaining-lifes').innerHTML = remainingLifes;
