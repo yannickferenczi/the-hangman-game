@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let level = "level1";
     let step = 1;
     let streak = 0;
+    let bestScore = 0;
     let theRiddle = new Riddle(level);
     displayRiddle(theRiddle.transformStuffToGuessIntoRiddle());
     // Define event listeners for the buttons
@@ -85,6 +86,10 @@ document.addEventListener("DOMContentLoaded", function () {
                                 <p>Total Score: ${document.getElementById("total-score").innerHTML} - Remainig Life${remainingLifes !== 1 ? "s" : ""}: ${remainingLifes}</p>`;
                             document.getElementById("new-game").textContent = "Try again";
                         } else {
+                            let currentScore = parseInt(document.getElementById("total-score").innerHTML);
+                            if (currentScore > bestScore) {
+                                bestScore = currentScore;
+                            }
                             document.getElementById("end-game-heading").textContent = "Game over!";
                             document.getElementById("end-game-info").innerHTML =
                                 `<p>The answer was "${theRiddle.stuffToGuess}"</p>
@@ -111,7 +116,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 // Quit the game
                 document.getElementById("end-game-container").style.display = "block";
                 document.getElementById("end-game-heading").textContent = "Good Bye!";
-                document.getElementById("end-game-info").innerHTML = `<p>Thank you for playing with us!</p>`;
+                document.getElementById("end-game-info").innerHTML = 
+                `<p>Thank you for playing with us!</p>
+                <p>Your best score was ${bestScore} points</p>`;
                 document.getElementById("new-game").style.display = "none";
                 document.getElementById("quit-game").style.display = "none";
             }
