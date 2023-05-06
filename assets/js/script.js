@@ -21,19 +21,55 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementsByClassName("dark-background")[0].style.display = "none";
             } else if (this.getAttribute("data-type") === "level") {
                 // Select the level of the game
-                level = this.innerHTML.replace(" ", "").toLowerCase();
-                theRiddle = new Riddle(level);
-                console.log(theRiddle.stuffToGuess);
-                displayRiddle(theRiddle.transformStuffToGuessIntoRiddle());
-                let listOfLevelButtons = document.getElementsByClassName("level-option");
-                for (let button of listOfLevelButtons) {
-                    button.dataset.status = "inactive";
+                let gameHasStarted = false;
+                let listOfLetterButtons = document.getElementsByClassName("typing-buttons");
+                for (let button of listOfLetterButtons) {
+                    if (button.disabled) {
+                        gameHasStarted = true;
+                        break;
+                    }
                 }
-                this.dataset.status = "active";
-                resetTypingArea();
-                step = 1;
-                document.getElementById("hangman").src = `assets/images/hangman-step${step}.png`;
-                document.getElementById("steps-left").textContent = `${7 - step} steps`;
+                if (gameHasStarted && confirm(`A riddle has already been started.\nIf you change level now, you will lose a life.\n
+                    Do you really want to change level?`)) {
+                    let remainingLifes = parseInt(document.getElementById("remaining-lifes").innerHTML);
+                    remainingLifes -= 1;
+                    document.getElementsByClassName("level-menu")[0].style.display = "block";
+                    document.getElementsByClassName("dark-background")[0].style.display = "none";
+                    document.getElementById("remaining-lifes").innerHTML = remainingLifes;
+                    level = this.innerHTML.replace(" ", "").toLowerCase();
+                    theRiddle = new Riddle(level);
+                    console.log(theRiddle.stuffToGuess);
+                    displayRiddle(theRiddle.transformStuffToGuessIntoRiddle());
+                    let listOfLevelButtons = document.getElementsByClassName("level-option");
+                    for (let button of listOfLevelButtons) {
+                        button.dataset.status = "inactive";
+                    };
+                    this.dataset.status = "active";
+                    resetTypingArea();
+                    step = 1;
+                    document.getElementById("hangman").src = `assets/images/hangman-step${step}.png`;
+                    document.getElementById("steps-left").textContent = `${7 - step} steps`;
+                } else if (gameHasStarted && !confirm(`A riddle has already been started.\nIf you change level now, you will lose a life.\n
+                    Do you really want to change level?`)) {
+                    document.getElementsByClassName("level-menu")[0].style.display = "block";
+                    document.getElementsByClassName("dark-background")[0].style.display = "none";
+                } else if (!gameHasStarted) {
+                    level = this.innerHTML.replace(" ", "").toLowerCase();
+                    theRiddle = new Riddle(level);
+                    document.getElementsByClassName("level-menu")[0].style.display = "block";
+                    document.getElementsByClassName("dark-background")[0].style.display = "none";
+                    console.log(theRiddle.stuffToGuess);
+                    displayRiddle(theRiddle.transformStuffToGuessIntoRiddle());
+                    let listOfLevelButtons = document.getElementsByClassName("level-option");
+                    for (let button of listOfLevelButtons) {
+                        button.dataset.status = "inactive";
+                    };
+                    this.dataset.status = "active";
+                    resetTypingArea();
+                    step = 1;
+                    document.getElementById("hangman").src = `assets/images/hangman-step${step}.png`;
+                    document.getElementById("steps-left").textContent = `${7 - step} steps`;
+                }
             } else if (this.getAttribute("data-type") === "letter") {
                 // Try a letter to solve the riddle
                 let userGuess = this.innerHTML;
