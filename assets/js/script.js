@@ -1,6 +1,6 @@
 // Start script when DOM Content is loaded
 document.addEventListener("DOMContentLoaded", function () {
-    resetScoreAndLifes();
+    let remainingLifes = resetScoreAndLifes();
     let level = "level1";
     let step = 1;
     let streak = 0;
@@ -31,24 +31,27 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
                 if (gameHasStarted && confirm(`A riddle has already been started.\nIf you change level now, you will lose a life.\n
                     Do you really want to change level?`)) {
-                    let remainingLifes = parseInt(document.getElementById("remaining-lifes").innerHTML);
                     remainingLifes -= 1;
                     document.getElementsByClassName("level-menu")[0].style.display = "block";
                     document.getElementsByClassName("dark-background")[0].style.display = "none";
                     document.getElementById("remaining-lifes").innerHTML = remainingLifes;
-                    level = this.innerHTML.replace(" ", "").toLowerCase();
-                    theRiddle = new Riddle(level);
-                    console.log(theRiddle.stuffToGuess);
-                    displayRiddle(theRiddle.transformStuffToGuessIntoRiddle());
-                    let listOfLevelButtons = document.getElementsByClassName("level-option");
-                    for (let button of listOfLevelButtons) {
-                        button.dataset.status = "inactive";
-                    };
-                    this.dataset.status = "active";
-                    resetTypingArea();
-                    step = 1;
-                    document.getElementById("hangman").src = `assets/images/hangman-step${step}.png`;
-                    document.getElementById("steps-left").textContent = `${7 - step} steps`;
+                    if (remainingLifes === 0) {
+                        gameOver(theRiddle, bestScore);
+                    } else {
+                        level = this.innerHTML.replace(" ", "").toLowerCase();
+                        theRiddle = new Riddle(level);
+                        console.log(theRiddle.stuffToGuess);
+                        displayRiddle(theRiddle.transformStuffToGuessIntoRiddle());
+                        let listOfLevelButtons = document.getElementsByClassName("level-option");
+                        for (let button of listOfLevelButtons) {
+                            button.dataset.status = "inactive";
+                        };
+                        this.dataset.status = "active";
+                        resetTypingArea();
+                        step = 1;
+                        document.getElementById("hangman").src = `assets/images/hangman-step${step}.png`;
+                        document.getElementById("steps-left").textContent = `${7 - step} steps`;
+                    }
                 } else if (gameHasStarted && !confirm(`A riddle has already been started.\nIf you change level now, you will lose a life.\n
                     Do you really want to change level?`)) {
                     document.getElementsByClassName("level-menu")[0].style.display = "block";
@@ -84,7 +87,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     let riddleCompleted = !(document.getElementById("riddle").textContent.includes("_"));
                     if (riddleCompleted) {
                         streak += 1;
-                        let remainingLifes = parseInt(document.getElementById("remaining-lifes").innerHTML);
                         if ((streak % 5) === 0) {
                             remainingLifes += 1;
                         }
@@ -115,7 +117,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     } else if (step > 1 && step < 6) {
                         document.getElementById("steps-left").textContent = `${7 - step} steps`;
                     } else {
-                        let remainingLifes = parseInt(document.getElementById("remaining-lifes").innerHTML);
                         remainingLifes -= 1;
                         streak = 0;
                         // Display the 'You lost' or 'Game Over' message
@@ -130,15 +131,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                 <p>Total Score: ${document.getElementById("total-score").innerHTML} - Remainig Life${remainingLifes !== 1 ? "s" : ""}: ${remainingLifes}</p>`;
                             document.getElementById("new-game").textContent = "Try again";
                         } else {
-                            let currentScore = parseInt(document.getElementById("total-score").innerHTML);
-                            if (currentScore > bestScore) {
-                                bestScore = currentScore;
-                            }
-                            document.getElementById("end-game-heading").textContent = "Game over!";
-                            document.getElementById("end-game-info").innerHTML =
-                                `<p>The answer was "${theRiddle.stuffToGuess}"</p>
-                                <p>${displayScoreByGameOver()}</p>`;
-                            document.getElementById("new-game").textContent = "New game";
+                            gameOver(theRiddle, bestScore);
                         }
                     }
                 }
@@ -154,7 +147,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById("steps-left").textContent = `${7 - step} steps`;
                 resetTypingArea();
                 if (this.textContent === "New game") {
-                    resetScoreAndLifes();
+                    remainingLifes = resetScoreAndLifes();
                 }
             } else if (this.getAttribute("data-type") === "quit-game") {
                 // Quit the game
@@ -11400,6 +11393,19 @@ function increaseScore(riddlePoints, bonus=0) {
     document.getElementById("total-score").innerHTML = (currentScore + riddlePoints + bonus);
 }
 
+function gameOver(theRiddle, bestScore) {
+    let currentScore = parseInt(document.getElementById("total-score").innerHTML);
+    if (currentScore > bestScore) {
+        bestScore = currentScore;
+    }
+    document.getElementById("end-game-container").style.display = "block";
+    document.getElementById("end-game-heading").textContent = "Game over!";
+    document.getElementById("end-game-info").innerHTML =
+        `<p>The answer was "${theRiddle.stuffToGuess}"</p>
+                                <p>${displayScoreByGameOver()}</p>`;
+    document.getElementById("new-game").textContent = "New game";
+}
+
 /**
  * Return a different message to display when the game is over
  * depending on the amount of total points cumulated 
@@ -11417,6 +11423,7 @@ function displayScoreByGameOver() {
 function resetScoreAndLifes() {
     document.getElementById("total-score").textContent = 0;
     document.getElementById("remaining-lifes").textContent = 3;
+    return parseInt(document.getElementById("remaining-lifes").innerHTML);
 }
 
 function resetTypingArea() {
