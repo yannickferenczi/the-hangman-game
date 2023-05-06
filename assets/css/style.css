@@ -274,6 +274,20 @@ details li {
     grid-template-rows: 3 / 4;
 }
 
+/* Styling the footer */
+.main-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: black;
+}
+
+.main-footer>p {
+    color: white;
+    line-height: 30px;
+}
+
 /* Media query for small screens landscape */
 @media only screen and (orientation: landscape) {
     .riddle-area {
