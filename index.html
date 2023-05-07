@@ -14,129 +14,130 @@
 </head>
 
 <body>
-    <header class="main-header">
-        <h1>The Hangman Game</h1>
-        <nav>
-            <div class="level-menu">
-                <button id="level-menu" data-type="level-menu">Levels</button>
-            </div>
-            <div class="dark-background">
-                <div class="hidden-menu">
-                    <p>Please, choose your level: </p>
-                    <ul class="level-list">
-                        <li class="option-item">
-                            <button class="level-option" data-type="level" data-status="active">Level 1</button>
-                        </li>
-                        <li class="option-item">
-                            <button class="level-option" data-type="level" data-status="inactive">Level 2</button>
-                        </li>
-                        <li class="option-item">
-                            <button class="level-option" data-type="level" data-status="inactive">Level 3</button>
-                        </li>
-                        <li class="option-item">
-                            <button class="level-option" data-type="level" data-status="inactive">Level 4</button>
-                        </li>
-                        <li class="option-item">
-                            <button class="level-option" data-type="level" data-status="inactive">Idioms</button>
-                        </li>
-                    </ul>
-                    <button class="close-menu" data-type="close-menu">X</button>
+    <div class="wrapper">
+        <header class="main-header">
+            <h1>The Hangman Game</h1>
+            <nav>
+                <div class="level-menu">
+                    <button id="level-menu" data-type="level-menu">Levels</button>
+                </div>
+                <div class="dark-background">
+                    <div class="hidden-menu">
+                        <p>Please, choose your level: </p>
+                        <ul class="level-list">
+                            <li class="option-item">
+                                <button class="level-option" data-type="level" data-status="active">Level 1</button>
+                            </li>
+                            <li class="option-item">
+                                <button class="level-option" data-type="level" data-status="inactive">Level 2</button>
+                            </li>
+                            <li class="option-item">
+                                <button class="level-option" data-type="level" data-status="inactive">Level 3</button>
+                            </li>
+                            <li class="option-item">
+                                <button class="level-option" data-type="level" data-status="inactive">Level 4</button>
+                            </li>
+                            <li class="option-item">
+                                <button class="level-option" data-type="level" data-status="inactive">Idioms</button>
+                            </li>
+                        </ul>
+                        <button class="close-menu" data-type="close-menu">X</button>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main class="main-content">
+            <details>
+                <summary>Check the rules here</summary>
+                <ul class="rules">
+                    <li>The goal of the hangman game is to guess the secret word before the stick figure is hung. Select
+                        letters to narrow the word.</li>
+                    <li>The gameplay continues until you guess the word or you run out of guesses and the stick figure is
+                        hung.</li>
+                    <li>Levels:
+                        <ul>
+                            <li>Level 1: words of 5 or 6 letters.</li>
+                            <li>Level 2: words of 7 or 8 letters.</li>
+                            <li>Level 3: words of 9 or 10 letters.</li>
+                            <li>Level 4: words of 11 or 12 letters.</li>
+                            <li>Idioms: common idioms used in UK or America.</li>
+                        </ul>
+                    </li>
+                    <li>Points:
+                        <ul>
+                            <li>You start with 0 Points.</li>
+                            <li>You only increase your score if the riddle is entirely solved.</li>
+                            <li>When solved, the riddle gives as many points as the amount of letters to guess.</li>
+                        </ul>
+                    </li>
+                    <li>Lifes:
+                        <ul>
+                            <li>You start with 3 lifes.</li>
+                            <li>You lose 1 life every time your figure is hung.</li>
+                            <li>You win 1 life every 5 streaks.</li>
+                            <li>The game is over when you have 0 remaining lifes.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </details>
+            <div id="end-game-container">
+                <div id="end-game-content">
+                    <h2 id="end-game-heading"></h2>
+                    <div id="end-game-info"></div>
+                    <button id="new-game" data-type="new-game"></button>
                 </div>
             </div>
-        </nav>
-    </header>
-    <main class="main-content">
-        <details>
-            <summary>Check the rules here</summary>
-            <ul class="rules">
-                <li>The goal of the hangman game is to guess the secret word before the stick figure is hung. Select
-                    letters to narrow the word.</li>
-                <li>The gameplay continues until you guess the word or you run out of guesses and the stick figure is
-                    hung.</li>
-                <li>Levels:
-                    <ul>
-                        <li>Level 1: words of 5 or 6 letters.</li>
-                        <li>Level 2: words of 7 or 8 letters.</li>
-                        <li>Level 3: words of 9 or 10 letters.</li>
-                        <li>Level 4: words of 11 or 12 letters.</li>
-                        <li>Idioms: common idioms used in UK or America.</li>
-                    </ul>
-                </li>
-                <li>Points:
-                    <ul>
-                        <li>You start with 0 Points.</li>
-                        <li>You only increase your score if the riddle is entirely solved.</li>
-                        <li>When solved, the riddle gives as many points as the amount of letters to guess.</li>
-                    </ul>
-                </li>
-                <li>Lifes:
-                    <ul>
-                        <li>You start with 3 lifes.</li>
-                        <li>You lose 1 life every time your figure is hung.</li>
-                        <li>You win 1 life every 5 streaks.</li>
-                        <li>The game is over when you have 0 remaining lifes.</li>
-                    </ul>
-                </li>
-            </ul>
-        </details>
-        <div id="end-game-container">
-            <div id="end-game-content">
-                <h2 id="end-game-heading"></h2>
-                <div id="end-game-info"></div>
-                <button id="new-game" data-type="new-game"></button>
-                <button id="quit-game" data-type="quit-game">Quit</button>
+            <div class="riddle-area">
+                <p id="riddle">_</p>
             </div>
-        </div>
-        <div class="riddle-area">
-            <p id="riddle">_</p>
-        </div>
-        <div class="score-area">
-            <div class="total-points">
-                <p>Score: <span id="total-score">0</span></p>
+            <div class="score-area">
+                <div class="total-points">
+                    <p>Score: <span id="total-score">0</span></p>
+                </div>
+                <div class="remaining-lifes">
+                    <p>Lifes: <span id="remaining-lifes">3</span></p>
+                </div>
             </div>
-            <div class="remaining-lifes">
-                <p>Lifes: <span id="remaining-lifes">3</span></p>
+            <div class="hangman-area">
+                <img id="hangman" src="assets/images/hangman-step1.png" alt="A draw representing the hangman game">
+                <div class="remaining-tries">
+                    <p id="still-a-chance">You are <span id="steps-left">6 steps</span> away from hanging!</p>
+                    <p id="no-more-steps">You are hanging!</p>
+                </div>
             </div>
-        </div>
-        <div class="hangman-area">
-            <img id="hangman" src="assets/images/hangman-step1.png" alt="A draw representing the hangman game">
-            <div class="remaining-tries">
-                <p id="still-a-chance">You are <span id="steps-left">6 steps</span> away from hanging!</p>
-                <p id="no-more-steps">You are hanging!</p>
+            <div class="typing-area">
+                <button data-type="letter" class="typing-buttons column-one line-one">A</button>
+                <button data-type="letter" class="typing-buttons column-two line-one">B</button>
+                <button data-type="letter" class="typing-buttons column-three line-one">C</button>
+                <button data-type="letter" class="typing-buttons column-four line-one">D</button>
+                <button data-type="letter" class="typing-buttons column-five line-one">E</button>
+                <button data-type="letter" class="typing-buttons column-six line-one">F</button>
+                <button data-type="letter" class="typing-buttons column-seven line-one">G</button>
+                <button data-type="letter" class="typing-buttons column-height line-one">H</button>
+                <button data-type="letter" class="typing-buttons column-nine line-one">I</button>
+                <button data-type="letter" class="typing-buttons column-one line-two">J</button>
+                <button data-type="letter" class="typing-buttons column-two line-two">K</button>
+                <button data-type="letter" class="typing-buttons column-three line-two">L</button>
+                <button data-type="letter" class="typing-buttons column-four line-two">M</button>
+                <button data-type="letter" class="typing-buttons column-five line-two">N</button>
+                <button data-type="letter" class="typing-buttons column-six line-two">O</button>
+                <button data-type="letter" class="typing-buttons column-seven line-two">P</button>
+                <button data-type="letter" class="typing-buttons column-height line-two">Q</button>
+                <button data-type="letter" class="typing-buttons column-nine line-two">R</button>
+                <button data-type="letter" class="typing-buttons column-one line-three">S</button>
+                <button data-type="letter" class="typing-buttons column-two line-three">T</button>
+                <button data-type="letter" class="typing-buttons column-three line-three">U</button>
+                <button data-type="letter" class="typing-buttons column-four line-three">V</button>
+                <button data-type="letter" class="typing-buttons column-five line-three">W</button>
+                <button data-type="letter" class="typing-buttons column-six line-three">X</button>
+                <button data-type="letter" class="typing-buttons column-seven line-three">Y</button>
+                <button data-type="letter" class="typing-buttons column-height line-three">Z</button>
             </div>
-        </div>
-        <div class="typing-area">
-            <button data-type="letter" class="typing-buttons column-one line-one">A</button>
-            <button data-type="letter" class="typing-buttons column-two line-one">B</button>
-            <button data-type="letter" class="typing-buttons column-three line-one">C</button>
-            <button data-type="letter" class="typing-buttons column-four line-one">D</button>
-            <button data-type="letter" class="typing-buttons column-five line-one">E</button>
-            <button data-type="letter" class="typing-buttons column-six line-one">F</button>
-            <button data-type="letter" class="typing-buttons column-seven line-one">G</button>
-            <button data-type="letter" class="typing-buttons column-height line-one">H</button>
-            <button data-type="letter" class="typing-buttons column-nine line-one">I</button>
-            <button data-type="letter" class="typing-buttons column-one line-two">J</button>
-            <button data-type="letter" class="typing-buttons column-two line-two">K</button>
-            <button data-type="letter" class="typing-buttons column-three line-two">L</button>
-            <button data-type="letter" class="typing-buttons column-four line-two">M</button>
-            <button data-type="letter" class="typing-buttons column-five line-two">N</button>
-            <button data-type="letter" class="typing-buttons column-six line-two">O</button>
-            <button data-type="letter" class="typing-buttons column-seven line-two">P</button>
-            <button data-type="letter" class="typing-buttons column-height line-two">Q</button>
-            <button data-type="letter" class="typing-buttons column-nine line-two">R</button>
-            <button data-type="letter" class="typing-buttons column-one line-three">S</button>
-            <button data-type="letter" class="typing-buttons column-two line-three">T</button>
-            <button data-type="letter" class="typing-buttons column-three line-three">U</button>
-            <button data-type="letter" class="typing-buttons column-four line-three">V</button>
-            <button data-type="letter" class="typing-buttons column-five line-three">W</button>
-            <button data-type="letter" class="typing-buttons column-six line-three">X</button>
-            <button data-type="letter" class="typing-buttons column-seven line-three">Y</button>
-            <button data-type="letter" class="typing-buttons column-height line-three">Z</button>
-        </div>
-    </main>
-    <footer class="main-footer">
-        <p>Copyright <i class="fa-sharp fa-regular fa-copyright"></i> 2023 Yannick Ferenczi</p>
-    </footer>
+        </main>
+        <footer class="main-footer">
+            <p>Copyright <i class="fa-sharp fa-regular fa-copyright"></i> 2023 Yannick Ferenczi</p>
+        </footer>
+    </div>
     <script src="https://kit.fontawesome.com/d78eb563ab.js" crossorigin="anonymous"></script>
     <script src="assets/js/script.js"></script>
 </body>

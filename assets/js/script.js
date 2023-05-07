@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", function () {
     let level = "level1";
     let step = 1;
     let streak = 0;
-    let bestScore = 0;
     let theRiddle = new Riddle(level);
     displayRiddle(theRiddle.transformStuffToGuessIntoRiddle());
     // Define event listeners for the buttons
@@ -36,11 +35,10 @@ document.addEventListener("DOMContentLoaded", function () {
                     document.getElementsByClassName("dark-background")[0].style.display = "none";
                     document.getElementById("remaining-lifes").innerHTML = remainingLifes;
                     if (remainingLifes === 0) {
-                        gameOver(theRiddle, bestScore);
+                        gameOver(theRiddle);
                     } else {
                         level = this.innerHTML.replace(" ", "").toLowerCase();
                         theRiddle = new Riddle(level);
-                        console.log(theRiddle.stuffToGuess);
                         displayRiddle(theRiddle.transformStuffToGuessIntoRiddle());
                         let listOfLevelButtons = document.getElementsByClassName("level-option");
                         for (let button of listOfLevelButtons) {
@@ -131,7 +129,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                 <p>Total Score: ${document.getElementById("total-score").innerHTML} - Remainig Life${remainingLifes !== 1 ? "s" : ""}: ${remainingLifes}</p>`;
                             document.getElementById("new-game").textContent = "Try again";
                         } else {
-                            gameOver(theRiddle, bestScore);
+                            gameOver(theRiddle);
                         }
                     }
                 }
@@ -149,15 +147,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (this.textContent === "New game") {
                     remainingLifes = resetScoreAndLifes();
                 }
-            } else if (this.getAttribute("data-type") === "quit-game") {
-                // Quit the game
-                document.getElementById("end-game-container").style.display = "block";
-                document.getElementById("end-game-heading").textContent = "Good Bye!";
-                document.getElementById("end-game-info").innerHTML = 
-                `<p>Thank you for playing with us!</p>
-                <p>Your best score was ${bestScore} points</p>`;
-                document.getElementById("new-game").style.display = "none";
-                document.getElementById("quit-game").style.display = "none";
             }
         });
     }
@@ -11393,11 +11382,7 @@ function increaseScore(riddlePoints, bonus=0) {
     document.getElementById("total-score").innerHTML = (currentScore + riddlePoints + bonus);
 }
 
-function gameOver(theRiddle, bestScore) {
-    let currentScore = parseInt(document.getElementById("total-score").innerHTML);
-    if (currentScore > bestScore) {
-        bestScore = currentScore;
-    }
+function gameOver(theRiddle) {
     document.getElementById("end-game-container").style.display = "block";
     document.getElementById("end-game-heading").textContent = "Game over!";
     document.getElementById("end-game-info").innerHTML =
