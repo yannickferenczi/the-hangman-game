@@ -16,7 +16,7 @@ body {
 }
 
 .wrapper {
-    background-color: rgba(173, 182, 122, 0.9);
+    background-color: rgba(205, 215, 149, 0.9);
     min-height: 100vh;
 }
 
@@ -126,6 +126,7 @@ details {
     grid-column: 2 / 10;
     text-align: center;
     background-color: black;
+    border-radius: 5px;
 }
 
 summary,
@@ -223,7 +224,7 @@ details li {
     padding: 10px;
 }
 
-.remaining-tries > p {
+.remaining-tries>p {
     font-size: 0.75rem;
 }
 
@@ -319,6 +320,13 @@ details li {
 
 /* Media query for small screens landscape */
 @media only screen and (orientation: landscape) {
+    .option-item {
+            display: inline-block;
+            margin: 15px 1% 15px;
+            width: 17%;
+            box-sizing: border-box;
+    }
+
     .riddle-area {
         grid-column: 5 / 10;
     }
@@ -330,6 +338,7 @@ details li {
 
     .hangman-area {
         grid-column: 2 / 5;
+        margin-bottom: 50px;
     }
 
     .typing-area {
@@ -373,6 +382,31 @@ details li {
 
 /* Media query for big screens landscape */
 @media only screen and (min-width: 900px) and (orientation: landscape) {
+    h1 {
+        font-size: 30px;
+    }
+
+    p {
+        font-size: 20px;
+    }
+
+    .level-menu {
+        grid-column: 7 / 11;
+        font-size: 30px;
+    }
+
+    summary {
+        font-size: 20px;
+    }
+
+    details li {
+        font-size: 20px;
+    }
+
+    .remaining-tries > p {
+        font-size: 0.85rem;
+    }
+
     .option-item {
         display: inline-block;
         margin: 15px 1% 15px;
