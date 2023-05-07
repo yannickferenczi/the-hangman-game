@@ -7,6 +7,15 @@
     text-decoration: none;
 }
 
+body {
+    background-image: url("../images/bandit_273813_1280.jpg");
+    background-color: rgba(255, 255, 255, 0.7);
+    background-repeat: repeat;
+    background-attachment: local;
+    background-position: top;
+    background-size: 20%;
+}
+
 /* Styling the header */
 .main-header {
     display: grid;
@@ -286,6 +295,10 @@ details li {
 .main-footer>p {
     color: white;
     line-height: 30px;
+}
+
+.fa-copyright {
+    color: white;
 }
 
 /* Media query for small screens landscape */
