@@ -19,36 +19,36 @@
             <h1>The Hangman Game</h1>
             <nav>
                 <div class="level-menu">
-                    <button id="level-menu" data-type="level-menu">Levels</button>
+                    <button id="level-menu" data-type="level-menu" aria-label="Opens the levels menu">Levels</button>
                 </div>
                 <div class="dark-background">
                     <div class="hidden-menu">
                         <p>Please, choose your level: </p>
                         <ul class="level-list">
                             <li class="option-item">
-                                <button class="level-option" data-type="level" data-status="active">Level 1</button>
+                                <button class="level-option" data-type="level" data-status="active" aria-label="Select the first level">Level 1</button>
                             </li>
                             <li class="option-item">
-                                <button class="level-option" data-type="level" data-status="inactive">Level 2</button>
+                                <button class="level-option" data-type="level" data-status="inactive" aria-label="Select the second level">Level 2</button>
                             </li>
                             <li class="option-item">
-                                <button class="level-option" data-type="level" data-status="inactive">Level 3</button>
+                                <button class="level-option" data-type="level" data-status="inactive" aria-label="Select the third level">Level 3</button>
                             </li>
                             <li class="option-item">
-                                <button class="level-option" data-type="level" data-status="inactive">Level 4</button>
+                                <button class="level-option" data-type="level" data-status="inactive" aria-label="Select the fourth level">Level 4</button>
                             </li>
                             <li class="option-item">
-                                <button class="level-option" data-type="level" data-status="inactive">Idioms</button>
+                                <button class="level-option" data-type="level" data-status="inactive" aria-label="Select the idioms level">Idioms</button>
                             </li>
                         </ul>
-                        <button class="close-menu" data-type="close-menu">X</button>
+                        <button class="close-menu" data-type="close-menu" aria-label="Close the level menu">X</button>
                     </div>
                 </div>
             </nav>
         </header>
         <main class="main-content">
             <details>
-                <summary>Check the rules here</summary>
+                <summary aria-label="Access the rules of the game">Check the rules here</summary>
                 <ul class="rules">
                     <li>The goal of the hangman game is to guess the secret word before the stick figure is hung. Select
                         letters to narrow the word.</li>
@@ -84,7 +84,7 @@
                 <div id="end-game-content">
                     <h2 id="end-game-heading">Game Over</h2>
                     <div id="end-game-info"></div>
-                    <button id="new-game" data-type="new-game"></button>
+                    <button id="new-game" data-type="new-game" aria-label="Starts a new game"></button>
                 </div>
             </div>
             <div class="riddle-area">
@@ -106,36 +106,36 @@
                 </div>
             </div>
             <div class="typing-area">
-                <button data-type="letter" class="typing-buttons column-one line-one">A</button>
-                <button data-type="letter" class="typing-buttons column-two line-one">B</button>
-                <button data-type="letter" class="typing-buttons column-three line-one">C</button>
-                <button data-type="letter" class="typing-buttons column-four line-one">D</button>
-                <button data-type="letter" class="typing-buttons column-five line-one">E</button>
-                <button data-type="letter" class="typing-buttons column-six line-one">F</button>
-                <button data-type="letter" class="typing-buttons column-seven line-one">G</button>
-                <button data-type="letter" class="typing-buttons column-height line-one">H</button>
-                <button data-type="letter" class="typing-buttons column-nine line-one">I</button>
-                <button data-type="letter" class="typing-buttons column-one line-two">J</button>
-                <button data-type="letter" class="typing-buttons column-two line-two">K</button>
-                <button data-type="letter" class="typing-buttons column-three line-two">L</button>
-                <button data-type="letter" class="typing-buttons column-four line-two">M</button>
-                <button data-type="letter" class="typing-buttons column-five line-two">N</button>
-                <button data-type="letter" class="typing-buttons column-six line-two">O</button>
-                <button data-type="letter" class="typing-buttons column-seven line-two">P</button>
-                <button data-type="letter" class="typing-buttons column-height line-two">Q</button>
-                <button data-type="letter" class="typing-buttons column-nine line-two">R</button>
-                <button data-type="letter" class="typing-buttons column-one line-three">S</button>
-                <button data-type="letter" class="typing-buttons column-two line-three">T</button>
-                <button data-type="letter" class="typing-buttons column-three line-three">U</button>
-                <button data-type="letter" class="typing-buttons column-four line-three">V</button>
-                <button data-type="letter" class="typing-buttons column-five line-three">W</button>
-                <button data-type="letter" class="typing-buttons column-six line-three">X</button>
-                <button data-type="letter" class="typing-buttons column-seven line-three">Y</button>
-                <button data-type="letter" class="typing-buttons column-height line-three">Z</button>
+                <button data-type="letter" class="typing-buttons column-one line-one" aria-label="Select the 'a' letter">A</button>
+                <button data-type="letter" class="typing-buttons column-two line-one" aria-label="Select the 'b' letter">B</button>
+                <button data-type="letter" class="typing-buttons column-three line-one" aria-label="Select the 'c' letter">C</button>
+                <button data-type="letter" class="typing-buttons column-four line-one" aria-label="Select the 'd' letter">D</button>
+                <button data-type="letter" class="typing-buttons column-five line-one" aria-label="Select the 'e' letter">E</button>
+                <button data-type="letter" class="typing-buttons column-six line-one" aria-label="Select the 'f' letter">F</button>
+                <button data-type="letter" class="typing-buttons column-seven line-one" aria-label="Select the 'g' letter">G</button>
+                <button data-type="letter" class="typing-buttons column-height line-one" aria-label="Select the 'h' letter">H</button>
+                <button data-type="letter" class="typing-buttons column-nine line-one" aria-label="Select the 'i' letter">I</button>
+                <button data-type="letter" class="typing-buttons column-one line-two" aria-label="Select the 'j' letter">J</button>
+                <button data-type="letter" class="typing-buttons column-two line-two" aria-label="Select the 'k' letter">K</button>
+                <button data-type="letter" class="typing-buttons column-three line-two" aria-label="Select the 'l' letter">L</button>
+                <button data-type="letter" class="typing-buttons column-four line-two" aria-label="Select the 'm' letter">M</button>
+                <button data-type="letter" class="typing-buttons column-five line-two" aria-label="Select the 'n' letter">N</button>
+                <button data-type="letter" class="typing-buttons column-six line-two" aria-label="Select the 'o' letter">O</button>
+                <button data-type="letter" class="typing-buttons column-seven line-two" aria-label="Select the 'p' letter">P</button>
+                <button data-type="letter" class="typing-buttons column-height line-two" aria-label="Select the 'q' letter">Q</button>
+                <button data-type="letter" class="typing-buttons column-nine line-two" aria-label="Select the 'r' letter">R</button>
+                <button data-type="letter" class="typing-buttons column-one line-three" aria-label="Select the 's' letter">S</button>
+                <button data-type="letter" class="typing-buttons column-two line-three" aria-label="Select the 't' letter">T</button>
+                <button data-type="letter" class="typing-buttons column-three line-three" aria-label="Select the 'u' letter">U</button>
+                <button data-type="letter" class="typing-buttons column-four line-three" aria-label="Select the 'v' letter">V</button>
+                <button data-type="letter" class="typing-buttons column-five line-three" aria-label="Select the 'w' letter">W</button>
+                <button data-type="letter" class="typing-buttons column-six line-three" aria-label="Select the 'x' letter">X</button>
+                <button data-type="letter" class="typing-buttons column-seven line-three" aria-label="Select the 'y' letter">Y</button>
+                <button data-type="letter" class="typing-buttons column-height line-three" aria-label="Select the 'z' letter">Z</button>
             </div>
         </main>
         <footer class="main-footer">
-            <p>Copyright <i class="fa-sharp fa-regular fa-copyright"></i> 2023 Yannick Ferenczi</p>
+            <p>Copyright <i class="fa-sharp fa-regular fa-copyright" aria-hidden="true"></i> 2023 Yannick Ferenczi</p>
         </footer>
     </div>
     <script src="https://kit.fontawesome.com/d78eb563ab.js" crossorigin="anonymous"></script>
