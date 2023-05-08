@@ -88,8 +88,8 @@ Everything happens on the same page and the interactions are entirely handled wi
 **Features which could be implemented with more time**
 
 - Add sound effects when the users ate playing to give a more entertaining feedback to their actions.
-- Implement event listeners related to the keyboard, giving more options of playing to the users.
-- Implement the game for more languages. The traduction of the website would not be a big effort but the lists of secret words would need to be stored in a separate files instead of being in the script.
+- Implement event listeners related to the keyboard, giving users more options to play.
+- Implement the game for more languages. The traduction of the website would not be a big effort but the lists of secret words would need to be stored in separate files instead of being in the script.
 - Add a Hint option, allowing users to display a letter of the riddle for free (against some compromises on the score).
 - Track the best score when users play more game in a row to help them know if they beat their own scores.
 
