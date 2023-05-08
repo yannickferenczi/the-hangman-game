@@ -13,6 +13,7 @@ This is a web application of the famous 'Hangman Game'. It allows the user to pl
   - [Table of Contents](#table-of-contents)
   - [User experience](#user-experience)
     - [Target Audience](#target-audience)
+    - [User stories](#user-stories)
   - [Design](#design)
   - [Technologies Used](#technologies-used)
   - [Testing](#testing)
@@ -30,6 +31,17 @@ The target audience for the Hangman Game can include:
 - People who want to play online
 - People who want to improve their vocabulary
 - People who want to learn new idioms
+
+### User stories
+
+1. First Time Visitor Goals
+   - As a First Time Visitor, I want to easily understand the main purpose of the website.
+   - As a First Time Visitor, I want to be able to understand how to play.
+2. Returning Visitor Goals
+   - As a Returning Visitor, I want a number of riddle to be really high as I do not want to already what are the secret words.
+3. Frequent User Goals
+   - As a Frequent User, I want to the page to load as fast as possible to optimize the time I spend on the application.
+   - As a Frequent User, I want to be able to play on any of my devices and always have all the information visible without scrolling.
 
 ## Design
 
