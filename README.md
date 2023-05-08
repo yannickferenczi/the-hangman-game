@@ -19,6 +19,7 @@ This is a web application of the famous 'Hangman Game'. It allows the user to pl
   - [Design](#design)
     - [Color](#color)
     - [Structure](#structure)
+    - [Wireframe](#wireframe)
   - [Technologies Used](#technologies-used)
   - [Testing](#testing)
   - [Bugs](#bugs)
@@ -58,6 +59,12 @@ The hangman game remind me on the first black and white western movies taking pl
 ### Structure
 
 Everything happens on the same page and the interactions are entirely handled with JavaScript. Therefore, if the page is reloaded, the score and the lifes will be reset to default.
+
+### Wireframe
+
+The wireframes have been created without holding back ideas. Therefore, some features, which could be nice to have on the project, have actually not been implemented on the final version because of a lack of capacity. For example the project has only been developed in english. The french and german part could be implemented later.
+
+![](readme-assets/hangman_game_wireframe.png)
 
 ## Technologies Used
 
