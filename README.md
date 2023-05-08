@@ -121,3 +121,6 @@ The levels could be reconsidered as it seems to be much more complicated to gues
 ## Credits
 
 ## Acknowledgements
+
+- A huge thanks to my wife for letting me spend hours on this project, even though in that period we got married and welcomed our little daughter in our wonderful world.
+- Thank you to Code Institute for their program to become a full stack software developer allowing me to code this project after less than 3 weeks of learning.
