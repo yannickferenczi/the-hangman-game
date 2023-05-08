@@ -26,6 +26,8 @@ This is a web application of the famous 'Hangman Game'. It allows the user to pl
   - [Testing](#testing)
   - [Bugs](#bugs)
   - [Deployment](#deployment)
+    - [How this project was deployed](#how-this-project-was-deployed)
+    - [How to clone the repository](#how-to-clone-the-repository)
   - [Credits](#credits)
   - [Acknowledgements](#acknowledgements)
 
@@ -97,6 +99,22 @@ The lists of words or expressions to guess are contained in some json file. Neve
 To fix this, I provided a shorter list for the development phase, until the project is deployed.
 
 ## Deployment
+
+### How this project was deployed
+
+1. In the GitHub repository, navigate to the Settings tab, then choose Pages from the left hand menu.
+2. From the source section drop-down menu, select the Master Branch and click on the 'save' button.
+3. Refresh the page after a few minute to display the link to the live webpage.
+4. Any changes pushed to the master branch will take effect on the live project.
+
+[Visit the live project here](https://yannickferenczi.github.io/the-hangman-game/)
+
+### How to clone the repository
+
+1. Go to the <https://github.com/yannickferenczi/the-hangman-game> repository.
+2. Click the 'Code' button to the right of the screen, then click HTTPs and copy the link.
+3. Open a GitBash terminal and navigate to the directory where you want to locate the clone.
+4. On the command line, type "git clone" then paste in the copied url and press the Enter key to begin the clone process.
 
 ## Credits
 
