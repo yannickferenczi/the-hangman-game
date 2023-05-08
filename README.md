@@ -12,6 +12,7 @@ This is a web application of the famous 'Hangman Game'. It allows the user to pl
 - [The Hangman Game](#the-hangman-game)
   - [Table of Contents](#table-of-contents)
   - [User experience](#user-experience)
+    - [Target Audience](#target-audience)
   - [Design](#design)
   - [Technologies Used](#technologies-used)
   - [Testing](#testing)
@@ -20,8 +21,15 @@ This is a web application of the famous 'Hangman Game'. It allows the user to pl
   - [Credits](#credits)
   - [Acknowledgements](#acknowledgements)
 
-
 ## User experience
+
+### Target Audience
+
+The target audience for the Hangman Game can include:
+
+- People who want to play online
+- People who want to improve their vocabulary
+- People who want to learn new idioms
 
 ## Design
 
