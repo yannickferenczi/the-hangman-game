@@ -25,6 +25,7 @@ This is a web application of the famous 'Hangman Game'. It allows the user to pl
     - [Languages](#languages)
     - [Frameworks and other Programs](#frameworks-and-other-programs)
   - [Testing](#testing)
+    - [Performance and Accessibility](#performance-and-accessibility)
   - [Bugs](#bugs)
   - [Deployment](#deployment)
     - [How this project was deployed](#how-this-project-was-deployed)
@@ -117,6 +118,14 @@ The wireframes have been created without holding back ideas. Therefore, some fea
 - CodeAnywhere has been used as an IDE to develop the project.
 
 ## Testing
+
+### Performance and Accessibility
+
+A lighthouse test has been performed and the results can be seen below:
+- for mobile 
+  ![lighthouse results for mobile](readme-assets/lighthouse_report_mobile.png)
+- for desktop 
+  ![lighthouse results for desktop](readme-assets/lighthouse_report_desktop.png)
 
 ## Bugs
 
