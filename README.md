@@ -48,9 +48,10 @@ The target audience for the Hangman Game can include:
    - As a First Time Visitor, I want to be able to understand how to play.
 2. Returning Visitor Goals
    - As a Returning Visitor, I want a number of riddle to be really high as I do not want to already know what are the secret words.
+   - As a Returning Visitor, I want to know my score and my remaining lifes.
 3. Frequent User Goals
    - As a Frequent User, I want to have everything on the same page to optimize the time I spend on the application.
-   - As a Frequent User, I want to be able to play on any of my devices and always have all the information visible without scrolling.
+   - As a Frequent User, I want to be able to play on any of my devices and always have all the information relative to the game visible without scrolling.
 
 ## Design
 
