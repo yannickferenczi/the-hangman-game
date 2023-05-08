@@ -19,6 +19,7 @@ This is a web application of the famous 'Hangman Game'. It allows the user to pl
   - [Design](#design)
     - [Color](#color)
     - [Structure](#structure)
+    - [Features](#features)
     - [Wireframe](#wireframe)
   - [Technologies Used](#technologies-used)
     - [Languages](#languages)
@@ -64,6 +65,32 @@ The hangman game remind me on the first black and white western movies taking pl
 ### Structure
 
 Everything happens on the same page and the interactions are entirely handled with JavaScript. Therefore, if the page is reloaded, the score and the lifes will be reset to default.
+
+### Features
+
+**Features related to the game implementation**
+
+| Code | Description |
+| ------- | -------- |
+| F01 | The game has a level selection |
+| F02 | The game has a score calculation |
+| F03 | The game has a remaining lifes calcultation |
+| F04 | The game has a rules section explaining how to play, how to make points and some bonus calculations |
+
+**Features related to the website utilisation**
+
+| Code | Description |
+| ------- | -------- |
+| F05 | The site has a favicon to help users finding the tab back when navigating to other pages |
+| F06 | The site has a responsive design, allowing users to play on any device |
+
+**Features which could be implemented with more time**
+
+- Add sound effects when the users ate playing to give a more entertaining feedback to their actions.
+- Implement event listeners related to the keyboard, giving more options of playing to the users.
+- Implement the game for more languages. The traduction of the website would not be a big effort but the lists of secret words would need to be stored in a separate files instead of being in the script.
+- Add a Hint option, allowing users to display a letter of the riddle for free (against some compromises on the score).
+- Track the best score when users play more game in a row to help them know if they beat their own scores.
 
 ### Wireframe
 
