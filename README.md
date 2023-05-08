@@ -98,6 +98,8 @@ Bug fixed by setting the value of the css property grid-row-start of the first h
 The lists of words or expressions to guess are contained in some json file. Nevertheless, it seems that those files cannot be access to as long as they are on my machine and not on a server.
 To fix this, I provided a shorter list for the development phase, until the project is deployed.
 
+The levels could be reconsidered as it seems to be much more complicated to guess a short word than a long one (as there is more chance to be match when the word has more letters). A new points calculation would then need to be implemented.
+
 ## Deployment
 
 ### How this project was deployed
