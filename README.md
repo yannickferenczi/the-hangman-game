@@ -21,6 +21,8 @@ This is a web application of the famous 'Hangman Game'. It allows the user to pl
     - [Structure](#structure)
     - [Wireframe](#wireframe)
   - [Technologies Used](#technologies-used)
+    - [Languages](#languages)
+    - [Frameworks and other Programs](#frameworks-and-other-programs)
   - [Testing](#testing)
   - [Bugs](#bugs)
   - [Deployment](#deployment)
@@ -64,9 +66,25 @@ Everything happens on the same page and the interactions are entirely handled wi
 
 The wireframes have been created without holding back ideas. Therefore, some features, which could be nice to have on the project, have actually not been implemented on the final version because of a lack of capacity. For example the project has only been developed in english. The french and german part could be implemented later.
 
-![](readme-assets/hangman_game_wireframe.png)
+![wireframe of the project](readme-assets/hangman_game_wireframe.png)
 
 ## Technologies Used
+
+### Languages
+
+- HTML5
+- CSS3
+- JavaScript
+
+### Frameworks and other Programs
+
+- Balsamiq has been used for the wireframes.
+- Font Awesome has been used to display the copyright icon.
+- Paint has been used to create the favicon and the draws of the hangman.
+- Tinypng has been used to reduce the size of the images.
+- Git has been used to version control the project.
+- GitHub has been used to cloudify and deploy the project.
+- CodeAnywhere has been used as an IDE to develop the project.
 
 ## Testing
 
