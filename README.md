@@ -4,6 +4,8 @@
 
 This is a web application of the famous 'Hangman Game'. It allows the user to play online. The goal is to guess the secret word or expression before the figure is hung.
 
+![responsive mockup](readme-assets/responsive_mockup.png)
+
 [Visit the live project here](https://yannickferenczi.github.io/the-hangman-game/)
 
 
