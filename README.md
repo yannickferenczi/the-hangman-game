@@ -8,7 +8,7 @@ This is a web application of the famous 'Hangman Game'. It allows the user to pl
 
 [Visit the live project here](https://yannickferenczi.github.io/the-hangman-game/)
 
-
+---
 ## Table of Contents
 
 - [The Hangman Game](#the-hangman-game)
@@ -32,8 +32,11 @@ This is a web application of the famous 'Hangman Game'. It allows the user to pl
     - [How this project was deployed](#how-this-project-was-deployed)
     - [How to clone the repository](#how-to-clone-the-repository)
   - [Credits](#credits)
+    - [Content](#content)
+    - [Media](#media)
   - [Acknowledgements](#acknowledgements)
 
+---
 ## User experience
 
 ### Target Audience
@@ -56,6 +59,7 @@ The target audience for the Hangman Game can include:
    - As a Frequent User, I want to have everything on the same page to optimize the time I spend on the application.
    - As a Frequent User, I want to be able to play on any of my devices and always have all the information relative to the game visible without scrolling.
 
+---
 ## Design
 
 The design has been kept as simple as possible for the user to easily find the needed information while playing. The full game area (riddle, score and lifes, hangman and typing area) should all be visible without scrolling for a best user experience.
@@ -76,7 +80,7 @@ Everything happens on the same page and the interactions are entirely handled wi
 | ------- | -------- |
 | F01 | The game has a level selection |
 | F02 | The game has a score calculation |
-| F03 | The game has a remaining lifes calcultation |
+| F03 | The game has a remaining lifes calculation |
 | F04 | The game has a rules section explaining how to play, how to make points and some bonus calculations |
 
 **Features related to the website utilisation**
@@ -100,6 +104,7 @@ The wireframes have been created without holding back ideas. Therefore, some fea
 
 ![wireframe of the project](readme-assets/hangman_game_wireframe.png)
 
+---
 ## Technologies Used
 
 ### Languages
@@ -118,6 +123,7 @@ The wireframes have been created without holding back ideas. Therefore, some fea
 - GitHub has been used to cloudify and deploy the project.
 - CodeAnywhere has been used as an IDE to develop the project.
 
+---
 ## Testing
 
 ### Performance and Accessibility
@@ -137,6 +143,7 @@ A lighthouse test has been performed and the results can be seen below:
 - jshint results
   ![jshint results](readme-assets/jshint_results.png)
 
+---
 ## Bugs
 
 When clicking on the level-menu button, the first heading does not stay where it belong.
@@ -148,6 +155,7 @@ The levels could be reconsidered as it seems to be much more complicated to gues
 
 To have some sound effects playing during the game would be a great entertainment for the user. Unfortunately, in this area of expertise too, I did not really understand why the sounds could not be played nor how to fix that issue.
 
+---
 ## Deployment
 
 ### How this project was deployed
@@ -166,8 +174,20 @@ To have some sound effects playing during the game would be a great entertainmen
 3. Open a GitBash terminal and navigate to the directory where you want to locate the clone.
 4. On the command line, type "git clone" then paste in the copied url and press the Enter key to begin the clone process.
 
+---
 ## Credits
 
+### Content
+
+- The secret words have been imported from [7esl](https://7esl.com/) and formated by the developer to harmonise its usage in the script.
+- The full content has been created by the developer.
+
+### Media
+
+- The background image has been downloaded for free from [Pixabay](https://pixabay.com/) (Big thanks to the creator: mhdhg)
+- All the hangman draws as well as the favicon have been created by the developer using paint.
+
+---
 ## Acknowledgements
 
 - A huge thanks to my wife for letting me spend hours on this project, even though in that period we got married and welcomed our little daughter in our wonderful world.
