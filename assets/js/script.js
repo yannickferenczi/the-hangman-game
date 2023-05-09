@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
                 if (gameHasStarted && confirm(`A riddle has already been started.\nIf you change level now, you will lose a life.\n
                     Do you really want to change level?`)) {
+                    // If the player change level while a riddle has been started
                     remainingLifes -= 1;
                     document.getElementsByClassName("level-menu")[0].style.display = "block";
                     document.getElementsByClassName("dark-background")[0].style.display = "none";
@@ -52,9 +53,11 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
                 } else if (gameHasStarted && !confirm(`A riddle has already been started.\nIf you change level now, you will lose a life.\n
                     Do you really want to change level?`)) {
+                    // If the player cancel changing level while a riddle has been started
                     document.getElementsByClassName("level-menu")[0].style.display = "block";
                     document.getElementsByClassName("dark-background")[0].style.display = "none";
                 } else if (!gameHasStarted) {
+                    // If the player change level when no riddle has been started
                     level = this.innerHTML.replace(" ", "").toLowerCase();
                     theRiddle = new Riddle(level);
                     document.getElementsByClassName("level-menu")[0].style.display = "block";
@@ -169,7 +172,7 @@ class Riddle {
     /**
      * This method is called once when an instance is created
      * and defines randomly what to guess
-     * @returns the word or expression to guess as a string
+     * @returns {String} the word or expression to guess
      */
     getStuffToGuess() {
         const data = {
@@ -11309,8 +11312,9 @@ class Riddle {
     }
 
     /**
-     * Replace every letter of stuffToGuess and leave other characters
+     * Replace every letter of stuffToGuess with an underscore and leave other characters
      * (such as space, comma, etc) visible
+     * @return {String} the riddle
      */
     transformStuffToGuessIntoRiddle() {
         let riddle = "";
@@ -11327,7 +11331,7 @@ class Riddle {
     /**
      * Calculates the amount of points the riddle can bring
      * if it is solved
-     * @returns a number
+     * @returns {Number} The riddle points
      */
     calculateRiddlePoints() {
         let points = 0;
@@ -11339,6 +11343,12 @@ class Riddle {
         return points;
     }
 
+    /**
+     * Calculates the bonus of the riddle:
+     * It is the extra points the riddle can bring
+     * if it is solved without any mistake
+     * @returns {Number} The riddle bonus
+     */
     calculateRiddleBonus() {
         return Math.floor(this.points * 0.2);
     }
@@ -11346,12 +11356,18 @@ class Riddle {
 
 /**
  * Display the riddle in the DOM
- * @param {string} stuffToGuess 
+ * @param {string} riddle The secret word where letters are replaced with underscores
  */
 function displayRiddle(riddle) {
     document.getElementById("riddle").textContent = riddle;
 }
 
+/**
+ * Check if the user's guess is match by looking for the letter in the secret word
+ * @param {String} userGuess A letter
+ * @param {String} stuffToGuess The secret word
+ * @returns {Array} All the positions in the secret word where the letter is a match
+ */
 function checkRiddleWithUserGuess(userGuess, stuffToGuess) {
     let indexToReveal = [];
     let startIndex = 0;
@@ -11367,6 +11383,11 @@ function checkRiddleWithUserGuess(userGuess, stuffToGuess) {
     return indexToReveal;
 }
 
+/**
+ * Replace underscores of the riddle with the user's guess where it is a match
+ * @param {String} riddleSolution The secret word
+ * @param {Array} indexToDisplay The positions of the letters to reveal in the riddle
+ */
 function insertAnswerIntoRiddle(riddleSolution, indexToDisplay) {
     let riddle = document.getElementById("riddle");
     let listOfLetters = Array.from(riddle.innerHTML);
@@ -11376,12 +11397,20 @@ function insertAnswerIntoRiddle(riddleSolution, indexToDisplay) {
     riddle.textContent = listOfLetters.join("");
 }
 
-
+/**
+ * Update the total score in the html document
+ * @param {Number} riddlePoints Amount of points of the riddle if solved
+ * @param {Number} bonus Extra points of the riddle if solved without mistakes
+ */
 function increaseScore(riddlePoints, bonus=0) {
     let currentScore = parseInt(document.getElementById("total-score").innerHTML);
     document.getElementById("total-score").innerHTML = (currentScore + riddlePoints + bonus);
 }
 
+/**
+ * Display the game over message when users have no more lifes
+ * @param {Object} theRiddle 
+ */
 function gameOver(theRiddle) {
     document.getElementById("end-game-container").style.display = "block";
     document.getElementById("end-game-heading").textContent = "Game over!";
@@ -11405,12 +11434,20 @@ function displayScoreByGameOver() {
     }
 }
 
+/**
+ * Update the document with the default starting score and lifes
+ * @returns {Number} The amount of remaining lifes
+ */
 function resetScoreAndLifes() {
     document.getElementById("total-score").textContent = 0;
     document.getElementById("remaining-lifes").textContent = 3;
     return parseInt(document.getElementById("remaining-lifes").innerHTML);
 }
 
+/**
+ * Update the document that the style of the typing area's buttons is
+ * back to its default values
+ */
 function resetTypingArea() {
     let typingButtons = document.getElementsByClassName("typing-buttons");
     for (let button of typingButtons) {

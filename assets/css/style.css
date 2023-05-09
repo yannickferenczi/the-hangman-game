@@ -43,7 +43,7 @@ h1 {
     padding: 15px 0;
 }
 
-/* Styling navigation menu */
+/* Styling the level menu */
 nav {
     grid-column: 1 / 11;
     grid-row-start: 1;
