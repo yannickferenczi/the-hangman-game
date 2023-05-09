@@ -26,6 +26,7 @@ This is a web application of the famous 'Hangman Game'. It allows the user to pl
     - [Frameworks and other Programs](#frameworks-and-other-programs)
   - [Testing](#testing)
     - [Performance and Accessibility](#performance-and-accessibility)
+    - [Validator Testing for syntaxe errors](#validator-testing-for-syntaxe-errors)
   - [Bugs](#bugs)
   - [Deployment](#deployment)
     - [How this project was deployed](#how-this-project-was-deployed)
@@ -126,6 +127,15 @@ A lighthouse test has been performed and the results can be seen below:
   ![lighthouse results for mobile](readme-assets/lighthouse_report_mobile.png)
 - for desktop 
   ![lighthouse results for desktop](readme-assets/lighthouse_report_desktop.png)
+
+### Validator Testing for syntaxe errors
+
+- jshint results
+  ![jshint results](readme-assets/jshint_results.png)
+- W3C markup validator results
+  ![w3c markup validator results](readme-assets/w3c_markup_validator.png)
+- W3C CSS validator results
+  ![w3c css validator results](readme-assets/w3c_css_validator.png)
 
 ## Bugs
 
