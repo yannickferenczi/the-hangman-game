@@ -57,7 +57,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     level = this.innerHTML.replace(" ", "").toLowerCase();
                     theRiddle = new Riddle(level);
                     hideLevelMenu()
-                    console.log(theRiddle.stuffToGuess);
                     displayRiddle(theRiddle.transformStuffToGuessIntoRiddle());
                     let listOfLevelButtons = document.getElementsByClassName("level-option");
                     for (let button of listOfLevelButtons) {
