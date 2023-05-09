@@ -12,12 +12,10 @@ document.addEventListener("DOMContentLoaded", function () {
         button.addEventListener("click", function () {
             if (this.getAttribute("data-type") === "level-menu") {
                 // Display the level options
-                document.getElementsByClassName("level-menu")[0].style.display = "none";
-                document.getElementsByClassName("dark-background")[0].style.display = "block";
+                displayLevelMenu();
             } else if (this.getAttribute("data-type") === "close-menu") {
                 // Hide the level options
-                document.getElementsByClassName("level-menu")[0].style.display = "block";
-                document.getElementsByClassName("dark-background")[0].style.display = "none";
+                hideLevelMenu();
             } else if (this.getAttribute("data-type") === "level") {
                 // Select the level of the game
                 let gameHasStarted = false;
@@ -32,8 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     Do you really want to change level?`)) {
                     // If the player change level while a riddle has been started
                     remainingLifes -= 1;
-                    document.getElementsByClassName("level-menu")[0].style.display = "block";
-                    document.getElementsByClassName("dark-background")[0].style.display = "none";
+                    hideLevelMenu()
                     document.getElementById("remaining-lifes").innerHTML = remainingLifes;
                     if (remainingLifes === 0) {
                         gameOver(theRiddle);
@@ -54,14 +51,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 } else if (gameHasStarted && !confirm(`A riddle has already been started.\nIf you change level now, you will lose a life.\n
                     Do you really want to change level?`)) {
                     // If the player cancel changing level while a riddle has been started
-                    document.getElementsByClassName("level-menu")[0].style.display = "block";
-                    document.getElementsByClassName("dark-background")[0].style.display = "none";
+                    hideLevelMenu()
                 } else if (!gameHasStarted) {
                     // If the player change level when no riddle has been started
                     level = this.innerHTML.replace(" ", "").toLowerCase();
                     theRiddle = new Riddle(level);
-                    document.getElementsByClassName("level-menu")[0].style.display = "block";
-                    document.getElementsByClassName("dark-background")[0].style.display = "none";
+                    hideLevelMenu()
                     console.log(theRiddle.stuffToGuess);
                     displayRiddle(theRiddle.transformStuffToGuessIntoRiddle());
                     let listOfLevelButtons = document.getElementsByClassName("level-option");
@@ -11456,4 +11451,20 @@ function resetTypingArea() {
         button.style.color = "white";
         button.style.backgroundColor = "black";
     }
+}
+
+/**
+ * Display the level menu
+ */
+function displayLevelMenu() {
+    document.getElementsByClassName("level-menu")[0].style.display = "none";
+    document.getElementsByClassName("dark-background")[0].style.display = "block";
+}
+
+/**
+ * Hide the level menu
+ */
+function hideLevelMenu() {
+    document.getElementsByClassName("level-menu")[0].style.display = "block";
+    document.getElementsByClassName("dark-background")[0].style.display = "none";
 }
