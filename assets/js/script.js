@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     Do you really want to change level?`)) {
                     // If the player change level while a riddle has been started
                     remainingLifes -= 1;
-                    hideLevelMenu()
+                    hideLevelMenu();
                     document.getElementById("remaining-lifes").innerHTML = remainingLifes;
                     if (remainingLifes === 0) {
                         gameOver(theRiddle);
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         let listOfLevelButtons = document.getElementsByClassName("level-option");
                         for (let button of listOfLevelButtons) {
                             button.dataset.status = "inactive";
-                        };
+                        }
                         this.dataset.status = "active";
                         resetTypingArea();
                         step = 1;
@@ -51,17 +51,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 } else if (gameHasStarted && !confirm(`A riddle has already been started.\nIf you change level now, you will lose a life.\n
                     Do you really want to change level?`)) {
                     // If the player cancel changing level while a riddle has been started
-                    hideLevelMenu()
+                    hideLevelMenu();
                 } else if (!gameHasStarted) {
                     // If the player change level when no riddle has been started
                     level = this.innerHTML.replace(" ", "").toLowerCase();
                     theRiddle = new Riddle(level);
-                    hideLevelMenu()
+                    hideLevelMenu();
                     displayRiddle(theRiddle.transformStuffToGuessIntoRiddle());
                     let listOfLevelButtons = document.getElementsByClassName("level-option");
                     for (let button of listOfLevelButtons) {
                         button.dataset.status = "inactive";
-                    };
+                    }
                     this.dataset.status = "active";
                     resetTypingArea();
                     step = 1;
@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         document.getElementById("end-game-container").style.display = "block";
                         document.getElementById("end-game-heading").textContent = "Congratulations!";
                         let bonusMessage = `plus a bonus of ${theRiddle.bonus} point${theRiddle.bonus !== 1 ? "s" : ""}`;
-                        let extraLifeMessage = "<p>You also got an extra life for your performance!</p>"
+                        let extraLifeMessage = "<p>You also got an extra life for your performance!</p>";
                         document.getElementById("end-game-info").innerHTML =
                             `<p>You got it and increased your score by  ${theRiddle.points} points ${step === 1 ? bonusMessage : ""}!</p>
                             ${step === 1 ? extraLifeMessage : ""}
