@@ -59,9 +59,10 @@ nav {
 button {
     color: white;
     background-color: black;
-    padding: 5px 15px;
+    padding: 15px;
     border-radius: 5px;
     border: 2px solid white;
+    box-sizing: border-box;
     box-shadow: 2px 2px 5px black;
 }
 
@@ -77,7 +78,7 @@ button {
 }
 
 .hidden-menu {
-    padding: 5px;
+    padding: 15px;
     border-radius: 5px;
     border: 2px solid white;
     box-shadow: 2px 2px 5px black;
@@ -429,5 +430,11 @@ details li {
 
     .typing-area {
         grid-column: 5 / 10;
+    }
+
+    button:hover {
+        text-decoration: underline;
+        text-decoration-thickness: 3px;
+        cursor: pointer;
     }
 }
