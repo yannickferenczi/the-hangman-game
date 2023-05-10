@@ -90,14 +90,29 @@ Everything happens on the same page and the interactions are entirely handled wi
 | F06 | The game has a draw area to illustrate at which stage users are from hanging |
 | F07 | The game provides a readable information of how many steps are left before hanging for users who are not familiar with the application to know how many tries left they have before hanging |
 
-2. Features related to the website utilisation
+1. Features related to the website utilisation
 
 | Code | Description |
 | ------- | -------- |
 | F08 | The site has a favicon to help users finding the tab back when navigating to other pages |
 | F09 | The site has a responsive design, allowing users to play on any device |
 
-3. Features which could be implemented with more time
+3. Screenshots of features
+
+- F01: ![Screenchot of the level menu](documentation/level_menu.png)
+- F02, F03, F05, F06 & F07: ![Screenchot of the game area](documentation/game_area.png)
+- F04: ![Screenchot of the game rules](documentation/game_rules.png)
+- F08: ![Screenchot of the favicon](documentation/favicon.png)
+- F09: ![Responsive mockup](documentation/responsive_mockup.png)
+
+4. Screenshots of the messages to the user
+
+- A confirm window pops up when users want to change level while a riddle has been started: ![Screenchot of the confirm window](documentation/confirm_changing-level.png)
+- A congratulations message pops up when users solve a riddle: ![Screenchot of the congratulaions message](documentation/congratulations_message.png)
+- A 'You lost' message pops up when users did not find the secret word before the figure was hung: ![Screenchot of the 'you lost' message](documentation/you-lost_message.png)
+- A 'Game Over' message pops up when users have used all their lifes: ![Screenchot of the 'game over' message](documentation/game-over_message.png)
+
+1. Features which could be implemented with more time
 
 - Add sound effects when the users ate playing to give a more entertaining feedback to their actions.
 - Implement event listeners related to the keyboard, giving users more options to play.
