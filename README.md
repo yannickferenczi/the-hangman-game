@@ -99,15 +99,20 @@ Everything happens on the same page and the interactions are entirely handled wi
 
 3. Screenshots of features
 
-    - F01: 
+    - F01:
+
         ![Screenchot of the level menu](documentation/level_menu.png)
     - F02, F03, F05, F06 & F07:
+
         ![Screenchot of the game area](documentation/game_area.png)
     - F04:
+
         ![Screenchot of the game rules](documentation/game_rules.png)
     - F08:
+
         ![Screenchot of the favicon](documentation/favicon.png)
     - F09:
+
         ![Responsive mockup](documentation/responsive_mockup.png)
 
 4. Screenshots of the messages to the user
