@@ -4,7 +4,7 @@
 
 This is a web application of the famous 'Hangman Game'. It allows the user to play online. The goal is to guess the secret word or expression before the figure is hung.
 
-![responsive mockup](readme-assets/responsive_mockup.png)
+![responsive mockup](documentation/responsive_mockup.png)
 
 [Visit the live project here](https://yannickferenczi.github.io/the-hangman-game/)
 
@@ -102,7 +102,7 @@ Everything happens on the same page and the interactions are entirely handled wi
 
 The wireframes have been created without holding back ideas. Therefore, some features, which could be nice to have on the project, have actually not been implemented on the final version because of a lack of capacity. For example the project has only been developed in english. The french and german part could be implemented later.
 
-![wireframe of the project](readme-assets/hangman_game_wireframe.png)
+![wireframe of the project](documentation/hangman_game_wireframe.png)
 
 ---
 ## Technologies Used
@@ -130,18 +130,18 @@ The wireframes have been created without holding back ideas. Therefore, some fea
 
 A lighthouse test has been performed and the results can be seen below:
 - for mobile 
-  ![lighthouse results for mobile](readme-assets/lighthouse_report_mobile.png)
+  ![lighthouse results for mobile](documentation/lighthouse_report_mobile.png)
 - for desktop 
-  ![lighthouse results for desktop](readme-assets/lighthouse_report_desktop.png)
+  ![lighthouse results for desktop](documentation/lighthouse_report_desktop.png)
 
 ### Validator Testing for syntaxe errors
 
 - W3C markup validator results
-  ![w3c markup validator results](readme-assets/w3c_markup_validator.png)
+  ![w3c markup validator results](documentation/w3c_markup_validator.png)
 - W3C CSS validator results
-  ![w3c css validator results](readme-assets/w3c_css_validator.png)
+  ![w3c css validator results](documentation/w3c_css_validator.png)
 - jshint results
-  ![jshint results](readme-assets/jshint_results.png)
+  ![jshint results](documentation/jshint_results.png)
 
 ---
 ## Bugs
