@@ -27,7 +27,7 @@ This is a web application of the famous 'Hangman Game'. It allows the user to pl
   - [Testing](#testing)
     - [Performance and Accessibility](#performance-and-accessibility)
     - [Validator Testing for syntaxe errors](#validator-testing-for-syntaxe-errors)
-    - [Testing the features along with the user stories from the user experience section above](#testing-the-features-along-with-the-user-stories-from-the-user-experience-section-above)
+    - [Testing the features along with the user stories from the user experience section above. \[^1\]](#testing-the-features-along-with-the-user-stories-from-the-user-experience-section-above-1)
     - [Testing responsiveness and cross platform compatibility](#testing-responsiveness-and-cross-platform-compatibility)
   - [Bugs](#bugs)
   - [Deployment](#deployment)
@@ -150,7 +150,7 @@ A lighthouse test has been performed and the results can be seen below:
 - jshint results
   ![jshint results](documentation/jshint_results.png)
 
-### Testing the features along with the user stories from the user experience section above
+### Testing the features along with the user stories from the user experience section above. [^1]
 
 | Features Code \\ User Stories Code | US01 | US02 | US03 | US04 | US05 | US06 | US07 | US08 |
 | ---------------------------------- | :----: | :----: | :----: | :----: | :----: | :----: | :----: | :----: |
@@ -163,6 +163,8 @@ A lighthouse test has been performed and the results can be seen below:
 | F07 |   | X |   |   |   |   |   |   |
 | F08 |   |   |   |   |   |   |   | X |
 | F09 |   |   |   |   |   |   | X |   |
+
+[^1]: A cross at the intersection of 'F' codes and 'US' codes means that the feature answers the user story.
 
 ### Testing responsiveness and cross platform compatibility
 
