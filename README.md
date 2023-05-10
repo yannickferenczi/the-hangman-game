@@ -62,7 +62,7 @@ The target audience for the Hangman Game can include:
 ---
 ## Design
 
-The design has been kept as simple as possible for the user to easily find the needed information while playing. The full game area (riddle, score and lifes, hangman and typing area) should all be visible without scrolling for a best user experience.
+The design has been kept as simple as possible for the user to easily find the needed information while playing. The full game area (riddle, score and lifes, hangman and typing area) should all be visible without scrolling for a best user experience. The application uses a mobile-first approach development as it is expected to mostly play it on a mobile phone.
 
 ### Color
 
@@ -74,23 +74,26 @@ Everything happens on the same page and the interactions are entirely handled wi
 
 ### Features
 
-**Features related to the game implementation**
+1. Features related to the game implementation
 
 | Code | Description |
 | ------- | -------- |
-| F01 | The game has a level selection |
-| F02 | The game has a score calculation |
-| F03 | The game has a remaining lifes calculation |
-| F04 | The game has a rules section explaining how to play, how to make points and some bonus calculations |
+| F01 | The game has a level selection to give users more playing options |
+| F02 | The game has a score calculation to keep track of the total score when playing more riddles |
+| F03 | The game has a remaining lifes calculation to challenge players |
+| F04 | The game has a rules section explaining how to play, how to make points and some bonus calculations. This section is hidden to optimize the clarity of the game |
+| F05 | The game has a typing area allowing users to submit their guessed letters |
+| F06 | The game has a draw area to illustrate at which stage users are from hanging |
+| F07 | The game provides a readable information of how many steps are left before hanging for users who are not familiar with the application to know how many tries left they have before hanging |
 
-**Features related to the website utilisation**
+2. Features related to the website utilisation
 
 | Code | Description |
 | ------- | -------- |
-| F05 | The site has a favicon to help users finding the tab back when navigating to other pages |
-| F06 | The site has a responsive design, allowing users to play on any device |
+| F08 | The site has a favicon to help users finding the tab back when navigating to other pages |
+| F09 | The site has a responsive design, allowing users to play on any device |
 
-**Features which could be implemented with more time**
+3. Features which could be implemented with more time
 
 - Add sound effects when the users ate playing to give a more entertaining feedback to their actions.
 - Implement event listeners related to the keyboard, giving users more options to play.
