@@ -27,6 +27,8 @@ This is a web application of the famous 'Hangman Game'. It allows the user to pl
   - [Testing](#testing)
     - [Performance and Accessibility](#performance-and-accessibility)
     - [Validator Testing for syntaxe errors](#validator-testing-for-syntaxe-errors)
+    - [Testing the features along with the user stories from the user experience section above](#testing-the-features-along-with-the-user-stories-from-the-user-experience-section-above)
+    - [Testing responsiveness and cross platform compatibility](#testing-responsiveness-and-cross-platform-compatibility)
   - [Bugs](#bugs)
   - [Deployment](#deployment)
     - [How this project was deployed](#how-this-project-was-deployed)
@@ -50,14 +52,16 @@ The target audience for the Hangman Game can include:
 ### User stories
 
 1. First Time Visitor Goals
-   - As a First Time Visitor, I want to easily understand the main purpose of the website.
-   - As a First Time Visitor, I want to be able to understand how to play.
+   - As a First Time Visitor, I want to easily understand the main purpose of the website. (US01)
+   - As a First Time Visitor, I want to be able to understand how to play. (US02)
+   - As a First Time Visitor, I want to have everything I need to play the game. (US03)
 2. Returning Visitor Goals
-   - As a Returning Visitor, I want a number of riddle to be really high as I do not want to already know what are the secret words.
-   - As a Returning Visitor, I want to know my score and my remaining lifes.
+   - As a Returning Visitor, I want a number of riddle to be really high as I do not want to already know what are the secret words. (US04)
+   - As a Returning Visitor, I want to know my score and my remaining lifes. (US05)
 3. Frequent User Goals
-   - As a Frequent User, I want to have everything on the same page to optimize the time I spend on the application.
-   - As a Frequent User, I want to be able to play on any of my devices and always have all the information relative to the game visible without scrolling.
+   - As a Frequent User, I want to have everything on the same page to optimize the time I spend on the application. (US06)
+   - As a Frequent User, I want to be able to play on any of my devices and always have all the information relative to the game visible without scrolling. (US07)
+   - As a Frequent User, I want to be able to easily find the tab of the application back when visiting other websites. (US08)
 
 ---
 ## Design
@@ -145,6 +149,28 @@ A lighthouse test has been performed and the results can be seen below:
   ![w3c css validator results](documentation/w3c_css_validator.png)
 - jshint results
   ![jshint results](documentation/jshint_results.png)
+
+### Testing the features along with the user stories from the user experience section above
+
+| Features Code \\ User Stories Code | US01 | US02 | US03 | US04 | US05 | US06 | US07 | US08 |
+| ---------------------------------- | :----: | :----: | :----: | :----: | :----: | :----: | :----: | :----: |
+| F01 |   | X |   | X |   |   |   |   |
+| F02 |   |   |   |   | X |   |   |   |
+| F03 |   |   |   |   | X |   |   |   |
+| F04 |   | X |   |   |   | X |   |   |
+| F05 |   |   | X |   |   |   |   |   |
+| F06 | X |   |   |   |   |   |   |   |
+| F07 |   | X |   |   |   |   |   |   |
+| F08 |   |   |   |   |   |   |   | X |
+| F09 |   |   |   |   |   |   | X |   |
+
+### Testing responsiveness and cross platform compatibility
+
+The application has been tested on different devices such as iPhone 6, iPhone 11, Samsung Galaxy S21, Tablet Huawei, laptop Lenovo Ideapad, Mac Book.
+
+It worked and displayed as expected on all of those devices.
+
+The application has also been tested and worked as expected using the following web browsers : Safari, Google Chrome, Microsoft Edge and Mozilla Firefox.
 
 ---
 ## Bugs
