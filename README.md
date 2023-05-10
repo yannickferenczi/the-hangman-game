@@ -175,14 +175,17 @@ The application has also been tested and worked as expected using the following 
 ---
 ## Bugs
 
-When clicking on the level-menu button, the first heading does not stay where it belong.
-Bug fixed by setting the value of the css property grid-row-start of the first heading to 1.
-
+**UNSOLVED**<BR>
 The lists of secret words should be storaged in separated json files to keep the data out of the script. But for some reasons, even though the data could be read with the script, they could not be used while playing. I did not really understand the issue nor how to fix it. I have then decided to carry on having the data as a dictionnary in the script.js file.
 
+**UNSOLVED**<BR>
 The levels could be reconsidered as it seems to be much more complicated to guess a short word than a long one (as there is more chance to be a match when the word has more letters). A new points calculation would then need to be implemented.
 
+**UNSOLVED**<BR>
 To have some sound effects playing during the game would be a great entertainment for the user. Unfortunately, in this area of expertise too, I did not really understand why the sounds could not be played nor how to fix that issue.
+
+**UNSOLVED**<BR>
+When changing level while a riddle has already been started, a confirm window pops up to alert that a life is going to be lost. Users can then confirm or cancel. However, when cancelling, the same confirm window pops up again and users must cancel a second time to get rid of it.
 
 ---
 ## Deployment
